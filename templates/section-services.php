@@ -25,14 +25,26 @@
                     <?php if (have_rows('service') ) : ?>
                           <?php while( have_rows('service') ) : the_row(); ?>
                           <div class="col-sm-4 section-services__item">
-                                <!-- Icon -->
-                                <?php if (get_sub_field('icon') ) :?>
-                                    <span class="section-services__item__icon"><? the_sub_field('icon') ?></span>
+                                <?php if ( get_sub_field('link') ) : ?>
+                                      <a href="<?php echo get_sub_field('link'); ?>">
+                                                                    <!-- Image -->
+                                <?php if(get_sub_field('image') ) : $img = get_sub_field('image');?>
+                                   <img class="section-service__image" src="<?= $img['sizes']['thumbnail'] ?>" alt="<?php echo $img['alt']; ?>">
+                                <?php endif;?>
+                                  <!-- Image -->
+                                    </a>
                                 <?php endif; ?>
-                                <!-- Icon -->
+
                                 <!-- Icon title -->
                                 <?php if(get_sub_field('title') ) : ?>
-                                      <h4 class="section-services__item__title"><?php echo get_sub_field('title'); ?></h4>
+                                      <h4 class="section-services__item__title">
+                                      <?php if ( get_sub_field('link') ) : ?>
+      <a href="<?php echo get_sub_field('link'); ?>">
+      <?php echo get_sub_field('title'); ?>
+</a>
+<?php endif; ?>
+
+                                          </h4>
                                 <?php endif; ?>
                                 <!-- Icon title -->
                                 <!-- Texte -->
