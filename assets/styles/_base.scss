@@ -28,16 +28,17 @@ html {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
-    font-family: $text-ff;
-    font-size: $text-fz; // only used for rem-handling, the actual font-size is $body__fontsize
-    line-height: $text-lh;
     color: $text-c;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-body {
+html body {
     // used as wrapper for sticky footer
+    font-family: $text-ff;
+    font-size: $text-fz; // only used for rem-handling, the actual font-size is $body__fontsize
+    line-height: $text-lh;
+    letter-spacing: 1px;
     display: flex;
     flex-direction: column;
     align-items: center;
