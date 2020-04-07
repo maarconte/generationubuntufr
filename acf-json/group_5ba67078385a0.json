@@ -1,23 +1,6 @@
 {
     "key": "group_5ba67078385a0",
     "title": "Citation",
-    "location": [
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "testimonials"
-            }
-        ]
-    ],
-    "menu_order": 0,
-    "position": "normal",
-    "style": "default",
-    "label_placement": "top",
-    "instruction_placement": "label",
-    "hide_on_screen": "",
-    "active": 1,
-    "description": "",
     "fields": [
         {
             "key": "field_5ba6719668b5f",
@@ -39,5 +22,22 @@
             "new_lines": ""
         }
     ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "testimonials"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
     "modified": false
 }
