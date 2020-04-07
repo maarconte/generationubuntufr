@@ -1,0 +1,17 @@
+.section-header {
+    background-color: #fff;
+    text-align: center;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 500px;
+    }
+
+    .section__title {
+        margin-bottom: 1rem !important;
+        font-size: 1.6rem !important;
+    }
+}
