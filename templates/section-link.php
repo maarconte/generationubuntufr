@@ -49,5 +49,19 @@
             <?php endwhile; ?>
         <?php endif; ?>
         <!-- Button -->
+        <!-- Button -->
+        <?php if (have_rows('button_secondary')) : ?>
+            <?php while ( have_rows('button_secondary') ) : the_row(); ?>
+                <?php if (get_sub_field('link') == 'Externe' && get_sub_field('label') && get_sub_field('url') ) : ?>
+                    <a href="<?php the_sub_field('url'); ?>" class="btn btn-outline-dark"><?php the_sub_field('label'); ?></a>
+                <?php endif; ?>
+                <?php if (get_sub_field('link') == 'Interne' && get_sub_field('label') && get_sub_field('int_url') ) : ?>
+                    <a href="<?php the_sub_field('int_url'); ?>" class="btn btn-outline-dark">
+                        <?php the_sub_field('label'); ?>
+                    </a>
+                <?php endif; ?>
+            <?php endwhile; ?>
+        <?php endif; ?>
+        <!-- Button -->
       </div>
  </section>
