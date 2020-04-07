@@ -437,8 +437,8 @@ acf_add_local_field_group(array(
 			),
 			'layouts' => array(
 				/* HEADER */
-				'layout_5b9bb37d734af' => array(
-					'key' => 'layout_5b9bb37d734af',
+				'layout_5b9bb37d734ag' => array(
+					'key' => 'layout_5b9bb37d734ag',
 					'name' => 'header',
 					'label' => 'Header',
 					'display' => 'block',
