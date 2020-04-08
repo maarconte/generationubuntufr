@@ -198,6 +198,7 @@ gulp.task('watch',  ['browsersync'], function() {
   gulp.watch(assets['javascript'], ['javascript']);
   gulp.watch('**/*.php', browserSync.reload);
   gulp.watch('*.html', browserSync.reload);
+  gulp.watch('**/*.scss', browserSync.reload);
 });
 
 gulp.task('build-clean', function() {
