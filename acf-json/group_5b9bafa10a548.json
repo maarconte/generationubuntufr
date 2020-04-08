@@ -1251,30 +1251,6 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5b9bb37d734c2",
-                            "label": "Afficher les coordonnées",
-                            "name": "contact_infos",
-                            "type": "radio",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "Oui": "Oui",
-                                "Non": "Non"
-                            },
-                            "allow_null": 0,
-                            "other_choice": 0,
-                            "default_value": "Oui",
-                            "layout": "horizontal",
-                            "return_format": "value",
-                            "save_other_choice": 0
-                        },
-                        {
                             "key": "field_5ba68c6fd1de1",
                             "label": "Titre",
                             "name": "title",
@@ -1294,6 +1270,25 @@
                             "maxlength": ""
                         },
                         {
+                            "key": "field_5e8df2762a906",
+                            "label": "Texte",
+                            "name": "texte",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": "",
+                            "new_lines": ""
+                        },
+                        {
                             "key": "field_5ba6741fet102",
                             "label": "Contact Form",
                             "name": "contact_form",
@@ -1309,6 +1304,31 @@
                             "allow_null": 0,
                             "multiple": 0,
                             "disable": ""
+                        },
+                        {
+                            "key": "field_5e8df3262a907",
+                            "label": "Gallerie",
+                            "name": "gallerie",
+                            "type": "gallery",
+                            "instructions": "Maximum 9 images",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "min": "",
+                            "max": 9,
+                            "insert": "append",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
                         }
                     ],
                     "min": "",
@@ -1434,5 +1454,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1586358386
+    "modified": 1586361615
 }

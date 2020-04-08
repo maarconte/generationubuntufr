@@ -21,91 +21,39 @@
       <? endif;?>
     <!-- Section background: image -->
     <div class="container">
-      <!-- Title -->
-      <?php if(get_sub_field('title') ) : ?>
+<div class="row">
+<?php
+
+$images = get_sub_field('gallerie');
+$size = 'thumbnail'; // (thumbnail, medium, large, full or custom size)
+
+if( $images ): ?>
+  <div class="section-contact__gallery col-sm-6">
+  <div class="grid">
+      <?php foreach( $images as $image ): ?>
+
+          <a href="<?php echo $image['url']; ?>" target="_blank">
+                   <img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>" />
+              </a>
+
+      <?php endforeach; ?>
+  </div>
+</div>
+<?php endif; ?>
+  <div class="section-contact__form col-sm-6">
+        <!-- Title -->
+        <?php if(get_sub_field('title') ) : ?>
   <h2 class="section__title text-center"><?php echo get_sub_field('title'); ?></h2>
 <?php endif; ?>
 <!-- Title -->
-<div class="row">
-<? if (get_sub_field('contact_infos') == "Oui"): ?>
-  <div class="col-sm-6">
-    <ul class="section-contact__infos">
-      <li class="section-contact__infos__phone">
-        <i class="fas fa-mobile fa-2x mr-2"></i>
-        <?php if (get_field('phone', 'option') ) : ?>
-          <span><?php echo get_field('phone','option'); ?></span>
-        <?php endif; ?>
-      </li>
-      <li class="section-contact__infos__address">
-        <i class="fas fa-map-marker-alt fa-2x mr-2"></i>
-          <?php if (get_field('adress', 'option') ) : ?>
-            <span><?php echo get_field('adress','option'); ?></span>
-          <?php endif; ?>
-      </li>
-      <li class="section-contact__infos__hours">
-        <i class="far fa-clock fa-2x mr-2"></i>
-        <?php if (get_field('hours', 'option') ) : ?>
-          <span><?php echo get_field('hours','option'); ?></span>
-        <?php endif; ?>
-      </li>
-    </ul>
-    <?php if (have_rows('rs', 'options')) : ?>
-      <ul class="section-contact__infos__rs">
-        <?php while ( have_rows('rs', 'options') ) : the_row(); ?>
-          <?php if (get_sub_field('facebook') ) : ?>
-              <li>
-                <a href="<?php the_sub_field('facebook');?>">
-                  <i class="fab fa-facebook" aria-hidden="true"></i>
-                </a>
-              </li>
-            <?php endif; ?>
-          <?php if (get_sub_field('twitter') ) : ?>
-              <li>
-                <a href="<?php the_sub_field('twitter');?>">
-                  <i class="fab fa-twitter" aria-hidden="true"></i>
-                </a>
-              </li>
-            <?php endif; ?>
-          <?php if (get_sub_field('instagram') ) : ?>
-              <li>
-                <a href="<?php the_sub_field('instagram');?>">
-                  <i class="fab fa-instagram" aria-hidden="true"></i>
-                </a>
-              </li>
-            <?php endif; ?>
-          <?php if (get_sub_field('google') ) : ?>
-              <li>
-                <a href="<?php the_sub_field('google');?>">
-                  <i class="fab fa-google" aria-hidden="true"></i>
-                </a>
-              </li>
-            <?php endif; ?>
-          <?php if (get_sub_field('linkedin') ) : ?>
-              <li>
-                <a href="<?php the_sub_field('linkedin');?>">
-                  <i class="fab fa-linkedin" aria-hidden="true"></i>
-                </a>
-              </li>
-            <?php endif; ?>
-          <?php if (get_sub_field('youtube') ) : ?>
-              <li>
-                <a href="<?php the_sub_field('youtube');?>">
-                  <i class="fab fa-youtube" aria-hidden="true"></i>
-                </a>
-              </li>
-            <?php endif; ?>
-        <? endwhile;?>
-      </ul>
-    <? endif;?>
-  </div>
-<? endif;?>
-  <div class="section-contact__form <? if (get_sub_field('contact_infos') == "Oui"): ?> col-sm-6 <? else : ?> col-sm-12 full-width<?endif; ?>">
+<?php if ( get_sub_field('texte') ) : ?>
+  <p><?php echo get_sub_field('texte'); ?></p>
+<?php endif; ?>
+
     <!-- Contact form -->
     <?php $form = get_sub_field('contact_form');?>
     <?php if($form) : ?>
-
           <?php echo $form; ?>
-
     <?php endif; ?>
     <!-- Contact form -->
   </div>
