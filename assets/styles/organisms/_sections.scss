@@ -43,12 +43,6 @@ main#sections {
     }
 }
 
-.bg-primary:not(.section-price) {
-    .btn {
-        @extend .btn-light;
-    }
-}
-
 @import "section-text";
 @import "section-text-image";
 @import "section-testimonials";

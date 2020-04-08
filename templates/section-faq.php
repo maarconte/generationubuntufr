@@ -11,9 +11,7 @@
  */
  ?>
 
- <section class="section section-faq
- <? if(get_sub_field('fond') == "Couleur"):?> bg-primary
-<? elseif(get_sub_field('fond') == "Gris"):?> bg-light<? endif;?>">
+ <section class="section section-faq <? echo $fond == "Couleur" ? "bg-primary": $fond == "Gris" ? "bg-light" : "" ?>">
 
  <div class="container">
         <!-- Title -->

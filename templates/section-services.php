@@ -11,7 +11,7 @@
  */
  ?>
 <section class="section section-services
-<? if(get_sub_field('fond') == "Couleur"):?> bg-primary
+<? if(get_sub_field('fond') == "Jaune"):?> bg-primary
   <? elseif(get_sub_field('fond') == "Gris"):?> bg-light<? endif;?>">
 
         <div class="container">
