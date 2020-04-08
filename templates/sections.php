@@ -16,9 +16,11 @@
 <main id="sections">
 <? if (has_post_thumbnail()) : ?>
     <section class="page__header">
-        <? the_post_thumbnail('large', ['class' => 'w-100']); ?>
+    <h1 class="page__header__title text-center"><? the_title(); ?></h1>
+        <? the_post_thumbnail('large'); ?>
     </section>
   <? endif?>
+
   <? if (have_posts()): while (have_posts()): the_post() ?>
 
     <? stanlee_sections() ?>
