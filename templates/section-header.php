@@ -13,10 +13,7 @@
       <? $custom_logo_id = get_theme_mod( 'custom_logo' );
         $image = wp_get_attachment_image_src( $custom_logo_id , 'medium' ); ?>
 
-  <section class="section section-header
-  <? if(get_sub_field('fond') == "Couleur"):?> bg-primary
-  <? elseif(get_sub_field('fond') == "Gris"):?> bg-light<? endif;?>">
-
+  <section class="section section-header <? echo $fond == "Couleur" ? "bg-primary": $fond == "Gris" ? "bg-light" : "" ?>">
     <!-- Section background: image -->
     <? if(get_sub_field('fond') == "Image"):?>
         <div class="section-background-image"  style="

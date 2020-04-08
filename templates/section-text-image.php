@@ -28,7 +28,23 @@
         </div>
     </div>
     <div class="col-sm-6 section-text-image__image">
-        <div class="bg" style="background-image: url(<?php if(get_sub_field('image') ) : $img = get_sub_field('image'); echo $img['url']; endif;?>)"></div>
+        <img src="<?php if(get_sub_field('image') ) : $img = get_sub_field('image'); echo $img['url']; endif;?>)" class="img-fluid"/>
+                               <!-- Button -->
+                               <?php if (have_rows('button')) : ?>
+            <?php while ( have_rows('button') ) : the_row(); ?>
+                <?php if (get_sub_field('link') == 'Externe' && get_sub_field('label') && get_sub_field('url') ) : ?>
+                    <a href="<?php the_sub_field('url'); ?>" class="btn btn-primary"><?php the_sub_field('label'); ?></a>
+
+            <?php endif; ?>
+                <?php if (get_sub_field('link') == 'Interne' && get_sub_field('label') && get_sub_field('int_url') ) : ?>
+
+                    <a href="<?php the_sub_field('int_url'); ?>" class="btn btn-primary">
+                        <?php the_sub_field('label'); ?>
+                    </a>
+                <?php endif; ?>
+            <?php endwhile; ?>
+        <?php endif; ?>
+        <!-- Button -->
     </div>
     </div>
  </section>

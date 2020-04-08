@@ -23,7 +23,7 @@
 /* SETTINGS
 /===================================================== */
 // local domain used by browsersync
-var browsersync_proxy = "gur.local";
+var browsersync_proxy = "localhost:10000";
 
 // default asset paths
 var assets = {
@@ -198,6 +198,7 @@ gulp.task('watch',  ['browsersync'], function() {
   gulp.watch(assets['javascript'], ['javascript']);
   gulp.watch('**/*.php', browserSync.reload);
   gulp.watch('*.html', browserSync.reload);
+  gulp.watch('**/*.scss', browserSync.reload);
 });
 
 gulp.task('build-clean', function() {
