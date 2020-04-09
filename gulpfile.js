@@ -122,7 +122,7 @@ gulp.task('browsersync', function() {
 // from:    assets/styles/main.css
 // actions: compile, minify, prefix, rename
 // to:      ./style.min.css
-gulp.task('css', gulp.series('clean:css'), function() {
+gulp.task('css', gulp.series('clean:css', function() {
   return gulp.src(assets['css'].concat(vendors['css']))
     .pipe(plumber({errorHandler: notify.onError("Error")}))
     .pipe(concat('style.min.css'))
@@ -133,7 +133,7 @@ gulp.task('css', gulp.series('clean:css'), function() {
     .pipe(rename('./style.min.css'))
     .pipe(gulp.dest('./'))
     .pipe(browserSync.stream());
-});
+}));
 
 
 /* CSS CACHE BUSTING
@@ -141,13 +141,13 @@ gulp.task('css', gulp.series('clean:css'), function() {
 // from:    dist/style.min.css
 // actions: create busted version of file
 // to:      dist/style-[hash].min.css
-gulp.task('cachebust', gulp.series('clean:cachebust', 'css'), function() {
+gulp.task('cachebust', gulp.series('clean:cachebust', 'css', function() {
   return gulp.src('./style.min.css')
     .pipe(rev())
     .pipe(gulp.dest('./'))
     .pipe(rev.manifest({merge: true}))
     .pipe(gulp.dest('./'))
-});
+}));
 
 
 /* JAVASCRIPT
@@ -156,7 +156,7 @@ gulp.task('cachebust', gulp.series('clean:cachebust', 'css'), function() {
 // actions: concatinate, minify, rename
 // to:      ./script.min.css
 // note:    modernizr.js is concatinated first in .pipe(order)
-gulp.task('javascript', gulp.series('clean:javascript'), function() {
+gulp.task('javascript', gulp.series('clean:javascript', function() {
   return gulp.src(assets['javascript'].concat(vendors['javascript']))
     .pipe(order([
       'assets/scripts/modernizr.js',
@@ -168,7 +168,7 @@ gulp.task('javascript', gulp.series('clean:javascript'), function() {
     .pipe(rename('./script.min.js'))
     .pipe(gulp.dest('./'))
     .pipe(browserSync.stream());
-});
+}));
 
 /* LANGUAGES
 /––––––––––––––––––––––––*/
@@ -193,13 +193,13 @@ gulp.task('makepot', function () {
 /––––––––––––––––––––––––*/
 // watch for modifications in
 // styles, scripts, images, php files, html files
-gulp.task('watch',  gulp.series('browsersync'), function() {
+gulp.task('watch',  gulp.series('browsersync', function() {
   gulp.watch(assets['css_watch'], ['css', 'cachebust']);
   gulp.watch(assets['javascript'], ['javascript']);
   gulp.watch('**/*.php', browserSync.reload);
   gulp.watch('*.html', browserSync.reload);
   gulp.watch('**/*.scss', browserSync.reload);
-});
+}));
 
 gulp.task('build-clean', function() {
   del(['dist/**/*']);
