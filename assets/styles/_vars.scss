@@ -16,7 +16,7 @@
 
 $base_size: 1.5vw; // scales all `rem` based elements by adding this value as html font-size
 
-$header_height: 4rem; // define the height of the header
+$header_height: 90px; // define the height of the header
 $element_width: 90vw; // default width of the inner elements --> nav, article, div.element, footer
 $element_maxwidth: 1200px; // max-width of the inner elements (should be <= $scaling_endpoint)
 
@@ -38,6 +38,7 @@ $color-grey2: #6B7577;
 $color-grey1: #D6E0E2;
 $color-grey: #D6E0E2;
 $color-light: #fff;
+$black: #000;
 
 /*=============================================
   FONTS

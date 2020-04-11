@@ -1,4 +1,5 @@
 <?
+
 /**
  * Services Block
  * This is a (very basic) default ACF-Block using the "Flexible Element" field-type
@@ -9,53 +10,53 @@
  * @since       gur_1.0.0
  *
  */
- ?>
+?>
 <section class="section section-services
-<? if(get_sub_field('fond') == "Jaune"):?> bg-primary
-  <? elseif(get_sub_field('fond') == "Gris"):?> bg-light<? endif;?>">
+<? if (get_sub_field('fond') == "Jaune") : ?> bg-primary
+  <? elseif (get_sub_field('fond') == "Gris") : ?> bg-light<? endif; ?>">
 
-        <div class="container">
-              <!-- Title -->
-              <?php if(get_sub_field('title') ) : ?>
-                    <h2 class="section__title"><?php echo get_sub_field('title'); ?></h2>
-              <?php endif; ?>
-              <!-- Title -->
-              <div class="row">
-                    <!-- Service -->
-                    <?php if (have_rows('service') ) : ?>
-                          <?php while( have_rows('service') ) : the_row(); ?>
-                          <div class="col-sm-4 section-services__item">
-                                <?php if ( get_sub_field('link') ) : ?>
-                                      <a href="<?php echo get_sub_field('link'); ?>">
-                                                                    <!-- Image -->
-                                <?php if(get_sub_field('image') ) : $img = get_sub_field('image');?>
-                                   <img class="section-service__image" src="<?= $img['sizes']['thumbnail'] ?>" alt="<?php echo $img['alt']; ?>">
-                                <?php endif;?>
-                                  <!-- Image -->
-                                    </a>
-                                <?php endif; ?>
+      <div class="container">
+            <!-- Title -->
+            <?php if (get_sub_field('title')) : ?>
+                  <h2 class="section__title primary text-left"><?php echo get_sub_field('title'); ?></h2>
+            <?php endif; ?>
+            <!-- Title -->
+            <div class="row mt-5">
+                  <!-- Service -->
+                  <?php if (have_rows('service')) : ?>
+                        <?php while (have_rows('service')) : the_row(); ?>
+                              <div class="col-lg-4 col-md-12 section-services__item">
+                                    <?php if (get_sub_field('link')) : ?>
+                                          <a class="no-style" href="<?php echo get_sub_field('link'); ?>">
+                                                <!-- Image -->
+                                                <?php if (get_sub_field('image')) : $img = get_sub_field('image'); ?>
+                                                      <div class="block__image--bordered">
+                                                            <div class="img-box">
+                                                                  <img class="section-service__image shadow" src="<?= $img['sizes']['medium'] ?>" alt="<?php echo $img['alt']; ?>">
+                                                            </div>
+                                                            <div class="bordered left-bottom"></div>
+                                                      </div>
+                                                <?php endif; ?>
+                                                <!-- Image -->
 
-                                <!-- Icon title -->
-                                <?php if(get_sub_field('title') ) : ?>
-                                      <h4 class="section-services__item__title">
-                                      <?php if ( get_sub_field('link') ) : ?>
-      <a href="<?php echo get_sub_field('link'); ?>">
-      <?php echo get_sub_field('title'); ?>
-</a>
-<?php endif; ?>
-
-                                          </h4>
-                                <?php endif; ?>
-                                <!-- Icon title -->
-                                <!-- Texte -->
-                                <?php if(get_sub_field('text') ) : ?>
-                                      <p class="section-services__item__text"> <?php echo get_sub_field('text'); ?></p>
-                                <?php endif; ?>
-                                <!-- Texte -->
-                          </div>
-                          <? endwhile; ?>
-                    <? endif;?>
-                    <!-- Service -->
-              </div>
-        </div>
- </section>
+                                                <!-- Icon title -->
+                                                <?php if (get_sub_field('title')) : ?>
+                                                      <h4 class="section-services__item__title">
+                                                            <?php echo get_sub_field('title'); ?>
+                                                      </h4>
+                                                <?php endif; ?>
+                                                <!-- Icon title -->
+                                                <!-- Texte -->
+                                                <?php if (get_sub_field('text')) : ?>
+                                                      <p class="section-services__item__text"> <?php echo get_sub_field('text'); ?></p>
+                                                <?php endif; ?>
+                                                <!-- Texte -->
+                                          </a>
+                                    <?php endif; ?>
+                              </div>
+                        <? endwhile; ?>
+                  <? endif; ?>
+                  <!-- Service -->
+            </div>
+      </div>
+</section>

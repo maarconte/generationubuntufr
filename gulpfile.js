@@ -160,7 +160,7 @@ gulp.task('javascript', gulp.series('clean:javascript', function() {
     ], { base: './' }))
     .pipe(plumber({errorHandler: notify.onError("<%= error.message %>")}))
     .pipe(concat('script.min.js'))
-    .pipe(uglify())
+    .pipe(uglify().on('error', console.error))
     .pipe(rename('./script.min.js'))
     .pipe(gulp.dest('./'))
     .pipe(browserSync.stream());
@@ -195,6 +195,7 @@ gulp.task('watch',  gulp.parallel('browsersync', function() {
   watch(assets['javascript'], gulp.series('javascript'));
   watch('**/*.php', browserSync.reload);
   watch('*.html', browserSync.reload);
+  watch('**/*.scss', browserSync.reload);
 }));
 
 gulp.task('build-clean', function() {
