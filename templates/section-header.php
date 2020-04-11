@@ -25,7 +25,7 @@
     <div class="container">
            <!-- Title -->
         <?php if(get_sub_field('title') ) : ?>
-            <h2 class="section__title"><?php echo get_sub_field('title'); ?></h2>
+            <h1 class="section__title"><?php echo get_sub_field('title'); ?></h1>
         <?php endif; ?>
         <!-- Title -->
 

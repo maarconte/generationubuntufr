@@ -12,10 +12,44 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     @include heading-size(6);
+    font-family: "Roboto Slab";
+    font-weight: 700;
+    font-size: 34px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $color-light;
+    span {
+        &.primary {
+            color: $color-primary!important;
+        }
+        &.light {
+            font-weight: 100!important;
+        }
+    }
 }
 
 h2 {
-    @include heading-size(5);
+    // @include heading-size(5);
+    font-size: 22px!important;
+    color: $color-dark!important;
+    text-transform: uppercase!important;
+    position: relative;
+    width: calc(100% - 20px);
+    padding-left: 20px!important;
+    &::before {
+        content: "";
+        height: 56px;
+        width: 4px;
+        display: inline-block;
+        vertical-align: middle;
+        background: $color-dark;
+        position: absolute;
+        top: 50%;
+        transform: translate(-20px, -50%);
+    }
+    &.primary::before{
+        background: $color-primary;
+    }
 }
 
 h3 {
@@ -23,7 +57,14 @@ h3 {
 }
 
 h4 {
-    @include heading-size(3);
+    // @include heading-size(3);
+    font-family: "Roboto Slab"!important;
+    font-weight: 700!important;
+    font-size: 17px!important;
+    line-height: normal!important;
+    text-align: center!important;
+    text-transform: uppercase!important;
+    color: $color-dark!important;
 }
 
 h5 {

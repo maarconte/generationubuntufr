@@ -18,11 +18,19 @@
         &__item {
             display: inline-block;
             list-style: none;
-            margin-right: .5rem;
+            margin-right: 1.5rem;
+
+            &:last-child{
+                margin-right: 0!important;
+            }
 
             a {
                 color: $color-grey1;
                 font-size: 1.5rem;
+            }
+
+            &:hover i {
+                color: $color-primary;
             }
         }
     }
@@ -54,7 +62,84 @@
 
         .nav-link {
             color: $color-light;
-            padding: 0 0 0.5rem 0;
+            padding: 0 0 0.75rem 0;
+        }
+    }
+
+    .footer__logo img {
+        width: 70px;
+    }
+
+    .footer__follow-us {
+        margin-top: 15px!important;
+        font-family: "Roboto Slab"!important;
+        font-size: 15px!important;
+        font-weight: 700!important;
+    }
+
+    .widget_nav_menu > div {
+        margin-top: 20px!important;
+    }
+
+    #menu-menu_footer {
+        margin-left: 40px!important;
+    }
+
+    .widget.widget_nav_menu {
+        li a {
+            font-family: "Arial Narrow", "sans-serif"!important;
+            font-size: 18px!important;
+            text-decoration: underline!important;
+            
+            &:hover {
+                color: $color-primary!important;
+            }
+        }
+    }
+
+    .footer__infos {
+        margin-top: 20px!important;
+
+        li p {
+            margin-bottom: 5px!important;
+            line-height: 20px!important;
+        }
+    }
+
+    .footer__credits {
+        background: $black;
+        position: relative;
+
+        .footer__thatmuch {
+            position: absolute;
+            top: 50%;
+            right: 35px;
+            transform: translate(0, -50%);
+        }
+    }
+
+    @media (max-width: 992px) {
+        #menu-menu_footer {
+            margin-left: 20px!important;
+        }
+
+        .footer__rs__item {
+            margin-right: .75rem;
+        }
+
+        .widget_nav_menu {
+            text-align: center!important;
+        }
+
+        .footer__credits .footer__thatmuch {
+            position: inherit;
+            display: block;
+        }
+    }
+
+    @media (max-width: 575px) {
+        #menu-menu_footer {
+            margin-left: 0px!important;
         }
     }
 }

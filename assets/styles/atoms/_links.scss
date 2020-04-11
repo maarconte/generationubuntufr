@@ -14,4 +14,13 @@ a {
     &:hover {
         color: $a__hovercolor;
     }
+
+    &.no-style {
+        text-decoration: none;
+        color: inherit;
+        &:hover {
+            text-decoration: none!important;
+            color: inherit!important;
+        }
+    }
 }
