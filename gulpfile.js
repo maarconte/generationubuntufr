@@ -195,6 +195,7 @@ gulp.task('watch',  gulp.parallel('browsersync', function() {
   watch(assets['javascript'], gulp.series('javascript'));
   watch('**/*.php', browserSync.reload);
   watch('*.html', browserSync.reload);
+  watch('**/*.scss', browserSync.reload);
 }));
 
 gulp.task('build-clean', function() {
