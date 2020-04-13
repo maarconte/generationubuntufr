@@ -46,6 +46,26 @@ nav.navbar {
         &:hover {
             opacity: .7;
         }
+
+        @include breakpoint(laptop) {
+            &.active {
+                position: relative;
+    
+                &::after {
+                    content: '';
+    
+                    width: calc(100% - 25px);
+                    position: absolute;
+                    left: 50%;
+                    bottom: 1px;
+                    transform: translate(-50%, 0);
+                
+                    border-width: 0 0 1px;
+                    border-style: solid;
+                    border-color: $color-primary-darker;
+                }
+            }
+        }
     }
 
     .header__rs {

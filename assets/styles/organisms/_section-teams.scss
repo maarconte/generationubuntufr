@@ -1,22 +1,77 @@
 .section-team {
-    text-align: center;
+
+    @include breakpoint(laptop) {
+        .team-column:nth-child(even) .section-team{
+            &__member {
+                flex-direction: row-reverse;
+    
+                &__img {
+                    margin-right: 0;
+                    margin-left: -35px;
+    
+                }
+            }
+        }
+    }
+    
 
     &__member {
-        margin-bottom: 30px;
-        text-align: center;
-        background-color: #fff;
-        padding: 60px 30px;
-        height: 100%;
+        margin-bottom: 50px;
+
+        @include breakpoint(laptop) {
+            display: flex;
+            align-items: center;
+        }
+
 
         &__img {
-            @extend .mb-3, .rounded-circle;
+            height: 310px;
+            width: 250px;
+            display: block;
+            margin: 0 auto 20px auto;
 
-            height: 150px;
-            width: 150px;
-            background-color: #ccc;
-            margin-left: auto;
-            margin-right: auto;
+            @include breakpoint(laptop) {
+                margin: 0 -35px 0 0;
+            }
         }
+
+        &__content {
+            padding: 20px 35px;
+            min-height: 363px;
+            background: $color-light;
+            text-align: center;
+            box-shadow: $shadow;
+            border-radius: 3px;
+            
+            @include breakpoint(laptop) {
+                text-align: left;
+                height: 363px;
+                overflow-y: hidden;
+            }
+
+            &__name {
+                margin-bottom: 0!important;
+
+                @include breakpoint(laptop) {
+                    text-align: left!important;
+                }
+            }
+
+            &__desc {
+                text-align: center;
+
+                @include breakpoint(laptop) {
+                    text-align: justify;
+                }
+            }
+
+            &__job {
+                font-family: "Roboto Slab";
+                font-size: 15px;
+                font-weight: 100!important;
+                margin-bottom: 1rem!important;
+            }
+        }        
 
         &__rs {
             li {

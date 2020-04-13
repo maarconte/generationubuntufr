@@ -141,4 +141,14 @@
             margin-left: 0px !important;
         }
     }
+
+    @media (max-width: 768px) {
+        .footer__credits {
+            padding-bottom: 20px;
+
+            &__thatmuch {
+                position: inherit;
+            }
+        }
+    }
 }

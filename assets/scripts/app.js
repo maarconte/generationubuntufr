@@ -30,7 +30,7 @@ var titles = document.querySelectorAll("h2");
 titles.forEach(function (title) {
     var titleLength = title.textContent.split(' ').length;
 
-    if (titleLength > 1) {
+    if (titleLength > 1 && !title.classList.contains("inline")) {
         var newTitle = title.textContent.replace(' ', "<br>");
 
         title.innerHTML = newTitle;
