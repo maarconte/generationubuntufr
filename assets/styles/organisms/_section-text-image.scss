@@ -1,8 +1,19 @@
 .section-text-image {
-
     &:nth-child(even) {
         .row {
             flex-direction: row-reverse;
+        }
+    }
+
+    &:nth-child(odd) {
+        .section-text-image__title {
+            text-align: right;
+
+            h2::before {
+                transform: inherit;
+                right: -40px;
+                top: 50%;
+            }
         }
     }
 
@@ -17,11 +28,11 @@
         margin-bottom: 40px;
 
         h2 {
-            padding-left: 40px!important;
+            padding-left: 40px !important;
             margin-top: 30px;
 
             &::before {
-                transform: translate(-40px,-50%);
+                transform: translate(-40px, -50%);
             }
         }
     }
@@ -45,23 +56,18 @@
         display: none;
         padding-left: 0 !important;
         padding-right: 0 !important;
+        flex-direction: column;
+        align-items: center;
 
-        .bg {
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            width: 100%;
-            height: 100%;
-
-            @include breakpoint(mobile) {
-                height: 350px;
-            }
-        }
-
-        .block__image--bordered{
-            max-width: 300px!important;
-            max-height: 300px!important;
+        .block__image--bordered {
+            max-width: 300px !important;
+            max-height: 300px !important;
             margin-left: 20px;
+            margin-bottom: 50px;
+
+            .img-box {
+                box-shadow: $shadow;
+            }
 
             .bordered {
                 width: 100%;
@@ -70,8 +76,7 @@
         }
 
         @include breakpoint(tablet) {
-            display: block;
+            display: flex;
         }
     }
-
 }
