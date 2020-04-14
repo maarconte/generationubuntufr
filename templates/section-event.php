@@ -56,7 +56,7 @@
 			</a>
 		<?php endif; ?>
 		</div>
-
+<? if (count($events) > 0) : ?>
 		<div class="row">
 		<? for ($i=0; $i < count($events) ; $i++) { ?>
 		<? $dateEvent = $events[$i]['start_time'] ; ?>
@@ -79,5 +79,7 @@
 		<? } ?>
 			</div>
 		</div>
+		<? else : ?><p>Il n'y a aucun événements à venir.</p>
+		<? endif; ?>
 	</div>
  </section>
