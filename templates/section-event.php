@@ -42,28 +42,36 @@
  <section class="section section-event">
  <div class="section__background bg-primary"></div>
 	<div class="container">
-	<!-- Title -->
-	<?php if (get_sub_field('title')) : ?>
-      <h2 class="section__title">
-		  <?php echo get_sub_field('title'); ?>
-		</h2>
-	<?php endif; ?>
-	<!-- Title -->
+		<div class="section-event_header">
+			<!-- Title -->
+			<?php if (get_sub_field('title')) : ?>
+				<h2 class="section__title">
+					<?= get_sub_field('title'); ?>
+				</h2>
+			<?php endif; ?>
+			<!-- Title -->
+		<?php if ( get_sub_field('button') ) : $link = get_sub_field('button'); ?>
+			<a class="btn btn-outline-dark" href="<?php echo $link['url']; ?>">
+				<?php echo $link['title']; ?>
+			</a>
+		<?php endif; ?>
+		</div>
+
 		<div class="row">
 		<? for ($i=0; $i < count($events) ; $i++) { ?>
 		<? $dateEvent = $events[$i]['start_time'] ; ?>
-			<div class="col-sm-4">
+			<div class="col-sm-6 col-md-4">
 				<div class="section-event_item card">
-					<img class="card-img-top" src="/wp-content/uploads/2020/04/Page.png" alt="Card image cap">
+					<img class="card-img-top section-event_item_img" src="/wp-content/uploads/2020/04/Page.png" alt="Card image cap">
 					<div class="card-body">
-						<div class="row">
-							<div class="col-2 section-event_date">
-								<p class="section-event_date_month"><?= $dateEvent-> format('M') ?></p>
-								<p class="section-event_date_day"><?= $dateEvent-> format('d') ?></p>
+						<div class="section-event_item_content">
+							<div class="section-event_item_date">
+								<p class="section-event_item_date_month"><?= $dateEvent-> format('M') ?></p>
+								<p class="section-event_item_date_day"><?= $dateEvent-> format('d') ?></p>
 							</div>
-							<div class="col-10">
-							<h5 class="card-title"><a href="https://facebook.com/events/<?= $events[$i]['id']?>"><?= $events[$i]['name'] ?></a> </h5>
-							<p class="card-text"><?= shorten($events[$i]['description'], 60) ?></p>
+							<div>
+							<h5 class="card-title section-event_item_title"><a href="https://facebook.com/events/<?= $events[$i]['id']?>"><?= $events[$i]['name'] ?></a> </h5>
+							<p class="card-text section-event_item_text"><?= shorten($events[$i]['description'], 60) ?></p>
 							</div>
 						</div>
 					</div>

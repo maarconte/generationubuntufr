@@ -1460,7 +1460,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "url"
+                            "return_format": "array"
                         },
                         {
                             "key": "field_5e9481865d6a1",
@@ -1555,5 +1555,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1586795884
+    "modified": 1586860149
 }
