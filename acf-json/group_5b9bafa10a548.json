@@ -1165,9 +1165,7 @@
                             "max_width": "",
                             "max_height": "",
                             "max_size": "",
-                            "mime_types": "",
-                            "return_format": "array",
-                            "preview_size": "medium"
+                            "mime_types": ""
                         },
                         {
                             "key": "field_5ba68b9426093",
@@ -1240,9 +1238,7 @@
                             "max_width": "",
                             "max_height": "",
                             "max_size": "",
-                            "mime_types": "",
-                            "return_format": "array",
-                            "preview_size": "medium"
+                            "mime_types": ""
                         }
                     ],
                     "min": "",
@@ -1332,9 +1328,7 @@
                             "max_width": "",
                             "max_height": "",
                             "max_size": "",
-                            "mime_types": "",
-                            "return_format": "array",
-                            "preview_size": "medium"
+                            "mime_types": ""
                         }
                     ],
                     "min": "",
@@ -1427,6 +1421,107 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_5e944519122ed": {
+                    "key": "layout_5e944519122ed",
+                    "name": "event",
+                    "label": "Évènements",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5e944519122ee",
+                            "label": "Titre",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "section__title",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5e944549122f2",
+                            "label": "Boutton",
+                            "name": "button",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
+                        },
+                        {
+                            "key": "field_5e9481865d6a1",
+                            "label": "App ID",
+                            "name": "app_id",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5e9481a25d6a2",
+                            "label": "Access Token",
+                            "name": "access_token",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5e949562c39e2",
+                            "label": "App Secret",
+                            "name": "app_secret",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Ajouter une section",
@@ -1460,5 +1555,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1586438062
+    "modified": 1586860149
 }

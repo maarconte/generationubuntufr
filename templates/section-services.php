@@ -41,9 +41,9 @@
 
                                                 <!-- Icon title -->
                                                 <?php if (get_sub_field('title')) : ?>
-                                                      <h4 class="section-services__item__title">
+                                                      <h3 class="section-services__item__title">
                                                             <?php echo get_sub_field('title'); ?>
-                                                      </h4>
+                                                      </h3>
                                                 <?php endif; ?>
                                                 <!-- Icon title -->
                                                 <!-- Texte -->
