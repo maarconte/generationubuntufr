@@ -11,14 +11,12 @@
  *
  */
 ?>
-<section class="section section-services
-<? if (get_sub_field('fond') == "Jaune") : ?> bg-primary
-  <? elseif (get_sub_field('fond') == "Gris") : ?> bg-light<? endif; ?>">
-
+<?php $fond = get_sub_field('fond'); ?>
+<section class="section section-services <?= $fond == "Couleur" ? "bg-primary": $fond == "Gris" ? "bg-light" : "" ?>">
       <div class="container">
             <!-- Title -->
             <?php if (get_sub_field('title')) : ?>
-                  <h2 class="section__title primary text-left"><?php echo get_sub_field('title'); ?></h2>
+                  <h2 class="section__title primary text-left"><?= get_sub_field('title'); ?></h2>
             <?php endif; ?>
             <!-- Title -->
             <div class="row mt-5">
@@ -27,12 +25,12 @@
                         <?php while (have_rows('service')) : the_row(); ?>
                               <div class="col-lg-4 col-md-12 section-services__item">
                                     <?php if (get_sub_field('link')) : ?>
-                                          <a class="no-style" href="<?php echo get_sub_field('link'); ?>">
+                                          <a class="no-style" href="<?= get_sub_field('link'); ?>">
                                                 <!-- Image -->
                                                 <?php if (get_sub_field('image')) : $img = get_sub_field('image'); ?>
                                                       <div class="block__image--bordered">
                                                             <div class="img-box">
-                                                                  <img class="section-service__image shadow" src="<?= $img['sizes']['medium'] ?>" alt="<?php echo $img['alt']; ?>">
+                                                                  <img class="section-service__image shadow" src="<?= $img['sizes']['medium'] ?>" alt="<?= $img['alt']; ?>">
                                                             </div>
                                                             <div class="bordered left-bottom"></div>
                                                       </div>
@@ -42,13 +40,13 @@
                                                 <!-- Icon title -->
                                                 <?php if (get_sub_field('title')) : ?>
                                                       <h3 class="section-services__item__title">
-                                                            <?php echo get_sub_field('title'); ?>
+                                                            <?= get_sub_field('title'); ?>
                                                       </h3>
                                                 <?php endif; ?>
                                                 <!-- Icon title -->
                                                 <!-- Texte -->
                                                 <?php if (get_sub_field('text')) : ?>
-                                                      <p class="section-services__item__text"> <?php echo get_sub_field('text'); ?></p>
+                                                      <p class="section-services__item__text"> <?= get_sub_field('text'); ?></p>
                                                 <?php endif; ?>
                                                 <!-- Texte -->
                                           </a>

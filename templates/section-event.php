@@ -51,8 +51,8 @@
 			<?php endif; ?>
 			<!-- Title -->
 		<?php if ( get_sub_field('button') ) : $link = get_sub_field('button'); ?>
-			<a class="btn btn-outline-dark" href="<?php echo $link['url']; ?>">
-				<?php echo $link['title']; ?>
+			<a class="btn btn-outline-dark" href="<?= $link['url']; ?>">
+				<?= $link['title']; ?>
 			</a>
 		<?php endif; ?>
 		</div>

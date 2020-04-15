@@ -17,7 +17,7 @@
         <div class="row">
             <div class="col-sm-12 section-text-image__title">
                 <?php if (get_sub_field('title')) : ?>
-                    <h2 class="inline"><?php echo get_sub_field('title'); ?></h2>
+                    <h2 class="inline"><?= get_sub_field('title'); ?></h2>
                 <?php endif; ?>
             </div>
             <div class="col-md-8 col-sm-12 section-text-image__text">
@@ -26,7 +26,7 @@
                     <!-- Title -->
                     <!-- Text -->
                     <?php if (get_sub_field('text')) : ?>
-                        <?php echo get_sub_field('text'); ?>
+                        <?= get_sub_field('text'); ?>
                     <?php endif; ?>
                     <!-- Text -->
                 </div>

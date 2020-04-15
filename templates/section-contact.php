@@ -11,7 +11,7 @@
  *
  */
 ?>
-
+<?php $fond = get_sub_field('fond'); ?>
 <section class="section section-contact <? echo $fond == "Couleur" ? "bg-primary" : $fond == "Gris" ? "bg-light" : "" ?>">
 	<!-- Section background: image -->
 	<? if (get_sub_field('fond') == "Image") : ?>
@@ -33,29 +33,29 @@
 					<div class="grid">
 						<?php foreach ($images as $image) : ?>
 
-							<a href="<?php echo $image['url']; ?>" target="_blank">
-								<img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>" />
+							<a href="<?= $image['url']; ?>" target="_blank">
+								<img src="<?= $image['sizes']['medium']; ?>" alt="<?= $image['alt']; ?>" />
 							</a>
 
 						<?php endforeach; ?>
 					</div>
 				</div>
 			<?php endif; ?>
-			
+
 			<div class="section-contact__form col-sm-12 col-lg-6">
 				<!-- Title -->
 				<?php if (get_sub_field('title')) : ?>
-					<h2 class="section__title primary"><?php echo get_sub_field('title'); ?></h2>
+					<h2 class="section__title primary"><?= get_sub_field('title'); ?></h2>
 				<?php endif; ?>
 				<!-- Title -->
 				<?php if (get_sub_field('texte')) : ?>
-					<p class="section__text"><?php echo get_sub_field('texte'); ?></p>
+					<p class="section__text"><?= get_sub_field('texte'); ?></p>
 				<?php endif; ?>
 
 				<!-- Contact form -->
 				<?php $form = get_sub_field('contact_form'); ?>
 				<?php if ($form) : ?>
-					<?php echo $form; ?>
+					<?= $form; ?>
 				<?php endif; ?>
 				<!-- Contact form -->
 			</div>

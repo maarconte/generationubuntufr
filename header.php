@@ -30,7 +30,7 @@
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container">
-			<a class="navbar-brand" href="<?php echo site_url(); ?>">
+			<a class="navbar-brand" href="<?= site_url(); ?>">
 				<div class="logo" style="background-image: url('<? if ($image[0]) : echo $image[0];
 																else : echo get_template_directory_uri() ?>/assets/images/logo.png<? endif; ?>')"></div>
 			</a>

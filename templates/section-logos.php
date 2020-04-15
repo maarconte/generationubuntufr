@@ -16,12 +16,12 @@
   <div class="container">
     <!-- Title -->
     <?php if (get_sub_field('title')) : ?>
-      <h2 class="section__title"><?php echo get_sub_field('title'); ?></h2>
+      <h2 class="section__title"><?= get_sub_field('title'); ?></h2>
     <?php endif; ?>
     <!-- Title -->
     <!-- Texte -->
     <?php if (get_sub_field('texte')) : ?>
-      <p class="section__texte mt-5 mb-4"><?php echo get_sub_field('texte'); ?></p>
+      <p class="section__texte mt-5 mb-4"><?= get_sub_field('texte'); ?></p>
     <?php endif; ?>
     <!-- Texte -->
     <?php
@@ -33,7 +33,7 @@
       <div class="section-logos__grid">
         <?php foreach ($images as $image) : ?>
           <div class="logo">
-            <img src="<?php echo $image['sizes'][$size]; ?>" alt="<?php echo $image['alt']; ?>" />
+            <img src="<?= $image['sizes'][$size]; ?>" alt="<?= $image['alt']; ?>" />
           </div>
         <?php endforeach; ?>
       </div>

@@ -10,7 +10,7 @@
  *
  */
  ?>
-
+<?php $fond = get_sub_field('fond'); ?>
   <section class="section section-testimonials <? echo $fond == "Couleur" ? "bg-primary": $fond == "Gris" ? "bg-light" : "" ?>">
     <!-- Section background: image -->
       <? if(get_sub_field('fond') == "Image"):?>
@@ -30,7 +30,7 @@
                     <div id="carouselTestimonials" class="section-testimonials__carousel carousel slide" data-ride="carousel">
                         <!-- Title -->
                         <?php if(get_sub_field('title') ) : ?>
-                              <h2 class="section__title text-center"><?php echo get_sub_field('title'); ?></h2>
+                              <h2 class="section__title text-center"><?= get_sub_field('title'); ?></h2>
                         <?php endif; ?>
                         <!-- Title -->
                           <div class="carousel-inner">
@@ -45,7 +45,7 @@
                                     <!-- Image -->
                                       <!-- Job -->
                                       <?php if (get_field('quote') ) : ?>
-                                            <p> <?php echo get_field('quote'); ?></p>
+                                            <p> <?= get_field('quote'); ?></p>
                                       <?php endif; ?>
                                       <!-- Job -->
                                       <!-- Auteur -->
@@ -56,7 +56,7 @@
                               </div>
                                       <ol class="carousel-indicators">
                                 <?php while ( $the_query->have_posts() ): $the_query->the_post(); ?>
-                                      <li data-target="#carouselTestimonials" data-slide-to="<?php echo $i?>" class="<?php if($i == 0) {echo 'active';
+                                      <li data-target="#carouselTestimonials" data-slide-to="<?= $i?>" class="<?php if($i == 0) {echo 'active';
                                       } ?>"></li>
                                 <?php $i++; endwhile;?>
                                 </ol>

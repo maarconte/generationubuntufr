@@ -12,7 +12,7 @@
  ?>
       <? $custom_logo_id = get_theme_mod( 'custom_logo' );
         $image = wp_get_attachment_image_src( $custom_logo_id , 'medium' ); ?>
-
+<?php $fond = get_sub_field('fond'); ?>
   <section class="section section-header <? echo $fond == "Couleur" ? "bg-primary": $fond == "Gris" ? "bg-light" : "" ?>">
     <!-- Section background: image -->
     <? if(get_sub_field('fond') == "Image"):?>
@@ -25,13 +25,13 @@
     <div class="container">
            <!-- Title -->
         <?php if(get_sub_field('title') ) : ?>
-            <h1 class="section__title"><?php echo get_sub_field('title'); ?></h1>
+            <h1 class="section__title"><?= get_sub_field('title'); ?></h1>
         <?php endif; ?>
         <!-- Title -->
 
         <!-- Lead -->
         <?php if(get_sub_field('lead') ) : ?>
-            <p> <?php echo get_sub_field('lead'); ?></p>
+            <p> <?= get_sub_field('lead'); ?></p>
         <?php endif; ?>
         <!-- Lead -->
         <!-- Button -->

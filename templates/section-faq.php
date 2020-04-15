@@ -10,13 +10,12 @@
  *
  */
  ?>
-
+<?php $fond = get_sub_field('fond'); ?>
  <section class="section section-faq <? echo $fond == "Couleur" ? "bg-primary": $fond == "Gris" ? "bg-light" : "" ?>">
-
  <div class="container">
         <!-- Title -->
         <?php if(get_sub_field('title') ) : ?>
-            <h2 class="section__title text-center"><?php echo get_sub_field('title'); ?></h2>
+            <h2 class="section__title text-center"><?= get_sub_field('title'); ?></h2>
         <?php endif; ?>
         <!-- Title -->
         <div class="accordion section-faq__accordion" id="faq-accordion">
@@ -25,7 +24,7 @@
 
                 <?php while( have_rows('faq') ) : the_row();?>
                     <div class="card">
-                        <div class="card-header" id="heading-<?php echo $i ?>" data-toggle="collapse" data-target="#collapse-<?php echo $i ?>" aria-expanded="true" aria-controls="collapseOne">
+                        <div class="card-header" id="heading-<?= $i ?>" data-toggle="collapse" data-target="#collapse-<?= $i ?>" aria-expanded="true" aria-controls="collapseOne">
                         <div class="row">
                             <div class="col-2 col-md-1"> <span class="card-header-expand" ><i class="fas fa-plus"></i></span></div>
                             <div class="col-10 col-md-11"><?php the_sub_field('question'); ?></div>
@@ -34,7 +33,7 @@
 
                         </div>
 
-                        <div id="collapse-<?php echo $i ?>" class="collapse" aria-labelledby="heading-<?php echo $i ?>" data-parent="#faq-accordion">
+                        <div id="collapse-<?= $i ?>" class="collapse" aria-labelledby="heading-<?= $i ?>" data-parent="#faq-accordion">
                             <div class="card-body">
                                 <p class="answer"><?php the_sub_field('answer'); ?></p>
                             </div>
