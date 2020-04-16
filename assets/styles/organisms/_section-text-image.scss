@@ -1,35 +1,75 @@
 .section-text-image {
     &:nth-child(even) {
         .row {
-            flex-direction: row-reverse;
+            @include breakpoint(tablet) {
+                flex-direction: row-reverse;
+            }
         }
     }
 
     &:nth-child(odd) {
-        .section-text-image__title {
-            text-align: right;
+        .row {
+            @include breakpoint(tablet) {
+                flex-direction: unset;
+            }
 
-            h2::before {
-                transform: inherit;
-                right: -40px;
-                top: 50%;
+            .btn-div {
+                text-align: right;
+        
+                @include breakpoint(tablet) {
+                    text-align: unset;
+                }
             }
         }
+
+        h2 {
+            text-align: right;
+            padding-right: 40px!important;
+
+            &::before {
+                right: 0!important;
+                transform: translate(0px,-50%)!important;
+            }
+        }
+
+        .section-text-image__image {
+            text-align: right;
+
+            .block__image--bordered {
+                margin-left: auto!important;
+                margin-right: 20px!important;
+    
+                .bordered {
+                    left: calc(50% + 17px)!important;
+                }
+            }
+
+            a.btn {
+                margin-right: 40px;
+            }
+        }
+    }
+
+    &:last-of-type {
+        padding-bottom: 12rem!important;
     }
 
     .row {
         min-height: 50vh;
         position: relative;
+
+        flex-direction: column-reverse;
     }
 
     &__title {
         padding-left: 0 !important;
         padding-right: 0 !important;
-        margin-bottom: 40px;
+        margin: 0 -15px 40px -15px;
 
         h2 {
             padding-left: 40px !important;
             margin-top: 30px;
+            width: 100%;
 
             &::before {
                 transform: translate(-40px, -50%);
@@ -48,16 +88,18 @@
 
             @include breakpoint(tablet) {
                 padding: 0 30px;
+
+                a.btn {
+                    display: none;
+                }
             }
         }
     }
 
     &__image {
-        display: none;
         padding-left: 0 !important;
         padding-right: 0 !important;
-        flex-direction: column;
-        align-items: center;
+        margin-bottom: 40px;
 
         .block__image--bordered {
             max-width: 300px !important;
@@ -75,8 +117,21 @@
             }
         }
 
+        a.btn {
+            margin: 50px 0 0 40px;
+        }
+
         @include breakpoint(tablet) {
-            display: flex;
+            display: block;
+            margin-bottom: 0px;
+        }
+    }
+
+    .btn-div {
+        margin-top: 40px;
+
+        @include breakpoint(tablet) {
+            margin-top: 0;
         }
     }
 }

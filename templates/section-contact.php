@@ -29,7 +29,7 @@
 			$size = 'thumbnail'; // (thumbnail, medium, large, full or custom size)
 
 			if ($images) : ?>
-				<div class="section-contact__gallery col-sm-6">
+				<div class="section-contact__gallery col-sm-12 col-lg-6">
 					<div class="grid">
 						<?php foreach ($images as $image) : ?>
 
