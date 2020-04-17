@@ -38,7 +38,7 @@
                 <!-- Text -->
   <!-- Button -->
   <?php if ( get_sub_field('button') ) : $link = get_sub_field('button'); ?>
-                <div class="section-text-image__btn d-none d-md-block">
+                <div class="section-text-image__btn">
                     <a class="btn <?= $fond == "Couleur" ? "btn-dark" : "btn-primary" ?>" href="<?= $link['url']; ?>">
                         <?= $link['title']; ?>
                     </a>
@@ -47,7 +47,7 @@
                 <!-- Button -->
   <!-- Button -->
   <?php if ( get_sub_field('button_secondary') ) : $link = get_sub_field('button_secondary'); ?>
-                <div class="section-text-image__btn d-none d-md-block">
+                <div class="section-text-image__btn">
                     <a class="btn btn-dark" href="<?= $link['url']; ?>">
                         <?= $link['title']; ?>
                     </a>

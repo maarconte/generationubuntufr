@@ -1,12 +1,19 @@
 .section-link {
     background: $color-light;
+
     .btn.btn-primary:first-of-type {
         margin-right: 15px;
     }
 
+    .btn {
+        @include breakpoint(mobile) {
+            display: block;
+        }
+    }
+
     @media (max-width: 768px) {
         .btn {
-            margin-right: 0px!important;
+            margin-right: 0px !important;
             margin-top: 10px !important;
         }
     }
