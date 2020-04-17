@@ -30,23 +30,12 @@
                     <div class="bordered left-bottom"></div>
                 </div>
                 <!-- Button -->
-                <?php if (have_rows('button')) : ?>
-                    <?php while (have_rows('button')) : the_row(); ?>
-                        <?php if (get_sub_field('link') == 'Externe' && get_sub_field('label') && get_sub_field('url')) : ?>
-                            <div class="section-text-image__btn d-none d-md-block">
-                                <a href="<?php the_sub_field('url'); ?>" class="btn btn-primary "><?php the_sub_field('label'); ?></a>
-                            </div>
-
-                        <?php endif; ?>
-                        <?php if (get_sub_field('link') == 'Interne' && get_sub_field('label') && get_sub_field('int_url')) : ?>
-
-                            <div class="section-text-image__btn d-none d-md-block">
-                                <a href="<?php the_sub_field('int_url'); ?>" class="btn btn-primary">
-                                    <?php the_sub_field('label'); ?>
-                                </a>
-                            </div>
-                        <?php endif; ?>
-                    <?php endwhile; ?>
+                <?php if ( get_sub_field('button') ) : $link = get_sub_field('button'); ?>
+                <div class="section-text-image__btn d-none d-md-block">
+                    <a class="btn btn-primary" href="<?= $link['url']; ?>">
+                        <?= $link['title']; ?>
+                    </a>
+                </div>
                 <?php endif; ?>
                 <!-- Button -->
             </div>
@@ -57,24 +46,13 @@
                         <?= get_sub_field('text'); ?>
                     <?php endif; ?>
                     <!-- Text -->
-                                    <!-- Button -->
-                <?php if (have_rows('button')) : ?>
-                    <?php while (have_rows('button')) : the_row(); ?>
-                        <?php if (get_sub_field('link') == 'Externe' && get_sub_field('label') && get_sub_field('url')) : ?>
-                            <div class="section-text-image__btn d-md-none d-block">
-                                <a href="<?php the_sub_field('url'); ?>" class="btn btn-primary "><?php the_sub_field('label'); ?></a>
-                            </div>
-
-                        <?php endif; ?>
-                        <?php if (get_sub_field('link') == 'Interne' && get_sub_field('label') && get_sub_field('int_url')) : ?>
-
-                            <div class="section-text-image__btn d-md-none d-block">
-                                <a href="<?php the_sub_field('int_url'); ?>" class="btn btn-primary ">
-                                    <?php the_sub_field('label'); ?>
-                                </a>
-                            </div>
-                        <?php endif; ?>
-                    <?php endwhile; ?>
+                   <!-- Button -->
+                   <?php if ( get_sub_field('button') ) : $link = get_sub_field('button'); ?>
+                <div class="section-text-image__btn d-md-none d-block">
+                    <a class="btn btn-primary" href="<?= $link['url']; ?>">
+                        <?= $link['title']; ?>
+                    </a>
+                </div>
                 <?php endif; ?>
                 <!-- Button -->
                 </div>
