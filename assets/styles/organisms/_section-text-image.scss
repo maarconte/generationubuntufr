@@ -19,11 +19,7 @@
         .block__image--bordered {
             .bordered {
                 left: inherit;
-                right: 0;
-
-                @include breakpoint(mobile) {
-                    right: -24px;
-                }
+                right: -24px;
             }
         }
     }
@@ -46,15 +42,8 @@
         margin-bottom: 40px;
 
         .block__image--bordered {
-            .img-box {
-                width: 300px;
-                height: 300px;
-            }
-
-            .bordered {
-                width: 300px;
-                height: 300px;
-            }
+            width: 300px;
+            height: 300px;
         }
 
         @include breakpoint(tablet) {
@@ -110,7 +99,6 @@
     }
 
     &__btn {
-        margin-top: 50px;
         text-align: center;
     }
 

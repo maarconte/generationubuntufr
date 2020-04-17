@@ -1,6 +1,4 @@
 .section-event {
-    padding: 50px 3rem !important;
-
     &_header {
         h2 {
             display: inline-block;
@@ -9,6 +7,13 @@
         a {
             vertical-align: top;
             float: right;
+
+            @include breakpoint(mobile) {
+                float: inherit;
+                text-align: center;
+                display: block;
+                margin-bottom: 30px;
+            }
         }
     }
 
