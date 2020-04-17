@@ -12,7 +12,7 @@
  */
 ?>
 
-<section class="section section-text-image">
+<section id="section-<?= sectionID(get_sub_field('title'));?>" class="section section-text-image">
     <div class="container">
         <div class="section-text-image__title">
             <?php if (get_sub_field('title')) : ?>
@@ -81,6 +81,17 @@
                     <?php endwhile; ?>
                 <?php endif; ?>
                 <!-- Button -->
+            </div>
+            <div class="col-md-8 col-sm-12 section-text-image__text">
+                <div class="section-text-image__text__inner">
+                    <!-- Title -->
+                    <!-- Title -->
+                    <!-- Text -->
+                    <?php if (get_sub_field('text')) : ?>
+                        <?= get_sub_field('text'); ?>
+                    <?php endif; ?>
+                    <!-- Text -->
+                </div>
             </div>
         </div>
     </div>

@@ -12,7 +12,6 @@
 <? /* Template Name: Sections */ ?>
 
 <? get_header(); ?>
-
 <main id="sections">
 <? if (has_post_thumbnail()) : ?>
     <section class="page__header">
@@ -22,8 +21,12 @@
   <? endif?>
 
   <? if (have_posts()): while (have_posts()): the_post() ?>
-
+  <div class="container">
+    <? the_content(); ?>
+  </div>
+  <div class="sections">
     <? stanlee_sections() ?>
+  </div>
   <? endwhile; endif ?>
 
 </main>
