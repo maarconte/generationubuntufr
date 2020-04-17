@@ -6,5 +6,44 @@
  *
  */
 img {
-    //
+    border-radius: 3px !important;
+
+    &.shadow {
+        box-shadow: $shadow;
+    }
+}
+
+.block__image--bordered {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 50px;
+
+    .img-box {
+        box-shadow: $shadow;
+        background: $color-light;
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .bordered {
+        border: 1px solid $color-grey2;
+        border-radius: 3px;
+        position: absolute;
+        z-index: -1;
+        top: 24px;
+        left: -24px;
+        width: 100%;
+        height: 100%;
+
+        @include breakpoint(mobile) {
+            left: -24px;
+        }
+    }
 }

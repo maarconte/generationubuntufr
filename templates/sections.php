@@ -12,12 +12,21 @@
 <? /* Template Name: Sections */ ?>
 
 <? get_header(); ?>
-
 <main id="sections">
+<? if (has_post_thumbnail()) : ?>
+    <section class="page__header">
+    <h1 class="page__header__title text-center"><? the_title(); ?></h1>
+        <? the_post_thumbnail('large'); ?>
+    </section>
+  <? endif?>
 
   <? if (have_posts()): while (have_posts()): the_post() ?>
-
+  <div class="container">
+    <? the_content(); ?>
+  </div>
+  <div class="sections">
     <? stanlee_sections() ?>
+  </div>
   <? endwhile; endif ?>
 
 </main>

@@ -1,4 +1,5 @@
 <?
+
 /**
  * Link Block
  * This is a (very basic) default ACF-Block using the "Flexible Element" field-type
@@ -9,45 +10,51 @@
  * @since       gur_1.0.0
  *
  */
- ?>
+?>
 
-  <section class="section section-link
-  <? if(get_sub_field('fond') == "Couleur"):?> bg-primary
-  <? elseif(get_sub_field('fond') == "Gris"):?> bg-light<? endif;?>">
-
+<?php $fond = get_sub_field('fond'); ?>
+<section class="section section-link text-center <? echo $fond == "Couleur" ? "bg-primary" : "" ?>">
     <!-- Section background: image -->
-    <? if(get_sub_field('fond') == "Image"):?>
-        <div class="section__background-image"  style="
-        <? if(get_sub_field('image')):?>
+    <? if (get_sub_field('fond') == "Image") : ?>
+        <div class="section__background-image" style="
+        <? if (get_sub_field('image')) : ?>
         background-image:url(<? echo the_sub_field('image') ?>);
-        <? endif;?>"></div>
-    <? endif;?>
+        <? endif; ?>"></div>
+    <? endif; ?>
     <!-- Section background: image -->
     <div class="container">
-        <!-- Title -->
-        <?php if(get_sub_field('title') ) : ?>
-            <h2 class="section__title"><?php echo get_sub_field('title'); ?></h2>
-        <?php endif; ?>
-        <!-- Title -->
+        <div class="row">
+            <div class="col-md-10 offset-md-1 col-sm-12 offset-sm-0">
+                <!-- Title -->
+                <!-- <?php if (get_sub_field('title')) : ?>
+            <h2 class="section__title"><?= get_sub_field('title'); ?></h2>
+        <?php endif; ?> -->
+                <!-- Title -->
 
-        <!-- Text -->
-        <?php if(get_sub_field('text') ) : ?>
-            <p class="mb-4"> <?php echo get_sub_field('text'); ?></p>
-        <?php endif; ?>
-        <!-- Text -->
-        <!-- Button -->
-        <?php if (have_rows('button')) : ?>
-            <?php while ( have_rows('button') ) : the_row(); ?>
-                <?php if (get_sub_field('link') == 'Externe' && get_sub_field('label') && get_sub_field('url') ) : ?>
-                    <a href="<?php the_sub_field('url'); ?>" class="btn btn-primary"><?php the_sub_field('label'); ?></a>
+                <!-- Text -->
+                <?php if (get_sub_field('text')) : ?>
+                    <p class="mb-4"> <?= get_sub_field('text'); ?></p>
                 <?php endif; ?>
-                <?php if (get_sub_field('link') == 'Interne' && get_sub_field('label') && get_sub_field('int_url') ) : ?>
-                    <a href="<?php the_sub_field('int_url'); ?>" class="btn btn-primary">
-                        <?php the_sub_field('label'); ?>
+                <!-- Text -->
+  <!-- Button -->
+  <?php if ( get_sub_field('button') ) : $link = get_sub_field('button'); ?>
+                <div class="section-text-image__btn">
+                    <a class="btn <?= $fond == "Couleur" ? "btn-dark" : "btn-primary" ?>" href="<?= $link['url']; ?>">
+                        <?= $link['title']; ?>
                     </a>
+                </div>
                 <?php endif; ?>
-            <?php endwhile; ?>
-        <?php endif; ?>
-        <!-- Button -->
-      </div>
- </section>
+                <!-- Button -->
+  <!-- Button -->
+  <?php if ( get_sub_field('button_secondary') ) : $link = get_sub_field('button_secondary'); ?>
+                <div class="section-text-image__btn">
+                    <a class="btn btn-dark" href="<?= $link['url']; ?>">
+                        <?= $link['title']; ?>
+                    </a>
+                </div>
+                <?php endif; ?>
+                <!-- Button -->
+            </div>
+        </div>
+    </div>
+</section>

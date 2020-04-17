@@ -4,8 +4,17 @@
     &__item {
         margin-bottom: 2rem;
 
-        &__icon {
-            font-size: 2em;
+        &__image {
+            max-width: 100%;
+        }
+
+        &__title {
+            margin-top: 30px;
+        }
+
+        &__text {
+            width: 80%;
+            margin: 10px auto;
         }
     }
 
@@ -13,5 +22,10 @@
         .section-services__item__icon {
             color: $color-primary-darker;
         }
+    }
+
+    .block__image--bordered {
+        width: 220px;
+        height: 220px;
     }
 }

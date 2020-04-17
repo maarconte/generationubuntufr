@@ -19,18 +19,18 @@
                   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                             <!-- Title -->
           <?php if(get_sub_field('title') ) : ?>
-              <h2 class="section__title"><?php echo get_sub_field('title'); ?></h2>
+              <h2 class="section__title"><?= get_sub_field('title'); ?></h2>
           <?php endif; ?>
           <!-- Title -->
                   <ol class="carousel-indicators">
                       <?php foreach( $images as $image ): ?>
-                          <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $i?>" class="<?php if($i == 0) {echo 'active';} ?>"></li>
+                          <li data-target="#carouselExampleIndicators" data-slide-to="<?= $i?>" class="<?php if($i == 0) {echo 'active';} ?>"></li>
                       <?php  $i++; endforeach;?>
                       </ol>
                       <div class="carousel-inner">
                           <?php foreach( $images as $image ): ?>
                               <div class="carousel-item <?php if($y == 0) {echo 'active';} ?>">
-                                  <img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>"/>
+                                  <img src="<?= $image['sizes']['large']; ?>" alt="<?= $image['alt']; ?>"/>
                               </div>
                           <?php  $y++; endforeach;?>
                       </div>

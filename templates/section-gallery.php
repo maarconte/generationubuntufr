@@ -14,7 +14,7 @@
       <div class="container">
           <!-- Title -->
           <?php if(get_sub_field('title') ) : ?>
-             <h2 class="section__title"><?php echo get_sub_field('title'); ?></h2>
+             <h2 class="section__title"><?= get_sub_field('title'); ?></h2>
       <?php endif; ?>
      <!-- Title -->
   <?php
@@ -26,8 +26,8 @@ if( $images ): ?>
   <div class="grid">
       <?php foreach( $images as $image ): ?>
 
-          <a href="<?php echo $image['url']; ?>" target="_blank">
-                   <img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>" />
+          <a href="<?= $image['url']; ?>" target="_blank">
+                   <img src="<?= $image['sizes']['medium']; ?>" alt="<?= $image['alt']; ?>" />
               </a>
 
       <?php endforeach; ?>

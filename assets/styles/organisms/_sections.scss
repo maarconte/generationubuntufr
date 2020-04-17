@@ -9,11 +9,11 @@ main#sections {
         }
 
         @media screen and (max-width: 530px) {
-            padding: 5rem 0 4rem 0;
+            padding: 5rem 1.5rem 4rem 1.5rem;
         }
 
         @include breakpoint(mobile) {
-            padding: 3rem 0 4rem 0;
+            padding: 3rem 1rem 4rem 1rem;
         }
 
 
@@ -40,12 +40,14 @@ main#sections {
             background-repeat: no-repeat;
             background-attachment: fixed;
         }
-    }
-}
 
-.bg-primary:not(.section-price) {
-    .btn {
-        @extend .btn-light;
+        &__background {
+            height: 250px;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            left: 0;
+        }
     }
 }
 
@@ -63,3 +65,5 @@ main#sections {
 @import "section-contact";
 @import "section-carousel";
 @import "section-teams";
+@import "section-header";
+@import "section-event";

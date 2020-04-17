@@ -10,10 +10,8 @@
  *
  */
  ?>
-
-  <section class="section section-price
-  <? if(get_sub_field('fond') == "Couleur"):?> bg-primary
-  <? elseif(get_sub_field('fond') == "Gris"):?> bg-light<? endif;?>">
+<?php $fond = get_sub_field('fond'); ?>
+  <section class="section section-price <? echo $fond == "Couleur" ? "bg-primary": $fond == "Gris" ? "bg-light" : "" ?>">
     <!-- Section background: image -->
       <? if(get_sub_field('fond') == "Image"):?>
       <div class="section__background-image"  style="
@@ -25,7 +23,7 @@
         <div class="container">
             <!-- Title -->
             <?php if(get_sub_field('title') ) : ?>
-                  <h2 class="section__title text-center"><?php echo get_sub_field('title'); ?></h2>
+                  <h2 class="section__title text-center"><?= get_sub_field('title'); ?></h2>
             <?php endif; ?>
             <!-- Title -->
             <!-- Count columns -->
@@ -43,7 +41,7 @@
                               <div class="section-price__column__wrapper">
                                     <!-- Title -->
                                     <?php if( get_sub_field('title') ) : ?>
-                                        <h3 class="section-price__column__title text-center">  <?php echo get_sub_field('title'); ?> </h3>
+                                        <h3 class="section-price__column__title text-center">  <?= get_sub_field('title'); ?> </h3>
                                     <?php endif; ?>
                                     <!-- Title -->
                                     <!-- Price -->
@@ -51,10 +49,10 @@
                                           <p class="section-price__column__price">
                                                 <!-- Devise -->
                                                 <?php if( get_sub_field('devise') ) : ?>
-                                                      <span class="section-price__column__devise"><?php echo get_sub_field('devise'); ?></span>
+                                                      <span class="section-price__column__devise"><?= get_sub_field('devise'); ?></span>
                                                 <?php endif; ?>
                                                 <!-- Devise -->
-                                                <?php echo get_sub_field('prix'); ?>
+                                                <?= get_sub_field('prix'); ?>
                                           </p>
                                     <?php endif; ?>
                                     <!-- Price -->
@@ -63,7 +61,7 @@
                                           <ul class="mb-auto">
                                                 <? while (have_rows('services')) : the_row()?>
                                                       <?php if( get_sub_field('text') ) : ?>
-                                                            <li class="section-price__column__service"><?php echo get_sub_field('text'); ?></li>
+                                                            <li class="section-price__column__service"><?= get_sub_field('text'); ?></li>
                                                       <?php endif; ?>
                                                 <? endwhile; ?>
                                           </ul>
