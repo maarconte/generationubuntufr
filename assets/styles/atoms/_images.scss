@@ -6,28 +6,38 @@
  *
  */
 img {
-    border-radius: 3px!important;
+    border-radius: 3px !important;
+
     &.shadow {
         box-shadow: $shadow;
     }
 }
 
 .block__image--bordered {
-    position: relative!important;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    .img-box {
+        box-shadow: $shadow;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
     .bordered {
         border: 1px solid $color-grey2;
         border-radius: 3px;
         position: absolute;
         z-index: -1;
-        &.left-bottom {
-            top: 17px;
-            left: calc(50% - 17px);
-            transform: translate(-50%);
-        }
-        &.right-bottom {
-            top: 17px;
-            left: calc(50% + 17px);
-            transform: translate(-50%);
+        top: 24px;
+        left: 0;
+
+        @include breakpoint(mobile) {
+            left: -24px;
         }
     }
 }
