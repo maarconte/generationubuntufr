@@ -1,7 +1,13 @@
 .section-contact {
-    &__gallery {
-        display: none;
+    .row {
+        flex-wrap: wrap-reverse;
 
+        @include breakpoint(laptop) {
+            flex-wrap: wrap;
+        }
+    }
+
+    &__gallery {
         .grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(50px, 1fr));
