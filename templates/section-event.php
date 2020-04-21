@@ -26,7 +26,7 @@
  	try {
 		// Returns a `FacebookFacebookResponse` object
 		$response = $fb->get(
-		"/".$appId.'/events',
+		"/".$appId.'/events&since=' . date('YYYY-mm-dd'),
 		$accessToken
 		);
 	} catch(FacebookExceptionsFacebookResponseException $e) {
