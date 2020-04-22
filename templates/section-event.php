@@ -75,8 +75,8 @@
 						</div>
 					</div>
 				</div>
-		<? } ?>
 			</div>
+		<? } ?>
 		</div>
 		<? else : ?><p>Il n'y a aucun événements à venir.</p>
 		<? endif; ?>
