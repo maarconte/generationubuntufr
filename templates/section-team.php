@@ -39,15 +39,15 @@
         );
         $the_query = new WP_Query($args);
         if ($the_query->have_posts()) : ?>
-            <div class="row justify-content-center">
+            <div class="">
                 <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-                    <div class="col-sm-12 team-column">
+                    <div class="team-column">
                         <div class="section-team__member">
                             <!-- Image -->
                             <?php if (get_the_post_thumbnail()) : ?>
-                                <img class="section-team__member__img" src="<?php the_post_thumbnail_url('medium') ?>" alt="<?php the_title() ?>">
-                            <? else : ?>
-                                <div class="section-team__member__img"></div>
+                                <div class="section-team__member__img">
+                                    <img  src="<?php the_post_thumbnail_url('large') ?>" alt="<?php the_title() ?>">
+                                </div>
                             <? endif; ?>
                             <!-- Image -->
                             <div class="section-team__member__content">
