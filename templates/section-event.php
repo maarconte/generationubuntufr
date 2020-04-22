@@ -22,11 +22,10 @@
 		'default_graph_version' => 'v2.10',
 		//'default_access_token' => '{access-token}', // optional
 	]);
-
  	try {
 		// Returns a `FacebookFacebookResponse` object
 		$response = $fb->get(
-		"/".$appId.'/events&since=' . date('YYYY-mm-dd'),
+		"/".$appId.'/events?since=' . date('Y-m-d'),
 		$accessToken
 		);
 	} catch(FacebookExceptionsFacebookResponseException $e) {
