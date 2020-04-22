@@ -23,9 +23,9 @@
             <div class="col-md-4 col-sm-12 section-text-image__image">
                 <div class="block__image--bordered">
                     <div class="img-box">
-                        <img src="<?php if (get_sub_field('image')) : $img = get_sub_field('image');
-                                        echo $img['url'];
-                                    endif; ?>)" class="img-fluid" />
+                    <?php if (get_sub_field('image')) : $img = get_sub_field('image'); ?>
+                        <img src="<?= $img['url']?>" class="img-fluid" />
+                    <?php endif; ?>
                     </div>
                     <div class="bordered left-bottom"></div>
                 </div>
