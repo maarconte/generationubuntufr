@@ -27,5 +27,14 @@
     .block__image--bordered {
         width: 220px;
         height: 220px;
+
+        // Cacher le filtrer N&B
+        img {
+            filter: inherit;
+
+            &:before {
+                display: none;
+            }
+        }
     }
 }

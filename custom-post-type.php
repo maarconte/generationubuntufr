@@ -1,5 +1,4 @@
-<? function cptui_register_my_cpts() {
-
+<?php function cptui_register_my_cpts() {
 /**
  * Post Type: Equipe.
  */
@@ -138,5 +137,4 @@ register_post_type( "portfolio", $args );
 }
 
 add_action( 'init', 'cptui_register_my_cpts' );
-
 ?>
