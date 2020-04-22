@@ -25,7 +25,7 @@
  	try {
 		// Returns a `FacebookFacebookResponse` object
 		$response = $fb->get(
-		"/".$appId.'/events?since=' . date('Y-m-d'),
+		"/".$appId.'/events?since=' . date('Y-m-d') . "&fields=cover,start_time,name,description",
 		$accessToken
 		);
 	} catch(FacebookExceptionsFacebookResponseException $e) {
@@ -61,7 +61,7 @@
 		<? $dateEvent = $events[$i]['start_time'] ; ?>
 			<div class="col-sm-6 col-md-4">
 				<div class="section-event_item card">
-					<img class="card-img-top section-event_item_img" src="/wp-content/uploads/2020/04/Page.png" alt="Card image cap">
+					<img class="card-img-top section-event_item_img" src="<?= $events['cover']['source'] ?>" alt="Card image cap">
 					<div class="card-body">
 						<div class="section-event_item_content">
 							<div class="section-event_item_date">
