@@ -36,6 +36,7 @@
                     <p class="mb-4"> <?= get_sub_field('text'); ?></p>
                 <?php endif; ?>
                 <!-- Text -->
+                <div class="d-flex justify-content-center">
   <!-- Button -->
   <?php if ( get_sub_field('button') ) : $link = get_sub_field('button'); ?>
                 <div class="section-text-image__btn">
@@ -54,6 +55,8 @@
                 </div>
                 <?php endif; ?>
                 <!-- Button -->
+
+                </div>
             </div>
         </div>
     </div>

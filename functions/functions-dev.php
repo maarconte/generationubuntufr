@@ -216,9 +216,16 @@ if (false && !is_user_logged_in() && is_main_query() && !is_admin() && !is_login
   wp_redirect('/admin'); die();
 }
 
+function clean($string) {
+  $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
+
+  return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
+}
+
 function sectionID($text){
     $a = remove_accents($text);
-    $result = strtolower(str_replace(" ", "-", $a));
+    $a = clean($a);
+    $result = strtolower($a);
     return $result;
 }
 ?>

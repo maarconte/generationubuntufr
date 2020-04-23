@@ -87,3 +87,8 @@ footer .inner {
     width: 100%;
 }
 
+.container {
+    @include breakpoint(desktopLg) {
+        max-width: 1250px !important;
+    }
+}
