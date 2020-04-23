@@ -18,7 +18,15 @@
         }
     }
 
-    .section-text-image__btn{
+    .section-text-image__btn {
         display: inline-block;
-     }
+    }
+
+    .section__title {
+        font-size: 1rem;
+
+        &:before {
+            display: none;
+        }
+    }
 }

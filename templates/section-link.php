@@ -26,9 +26,9 @@
         <div class="row">
             <div class="col-md-10 offset-md-1 col-sm-12 offset-sm-0">
                 <!-- Title -->
-                <!-- <?php if (get_sub_field('title')) : ?>
-            <h2 class="section__title"><?= get_sub_field('title'); ?></h2>
-        <?php endif; ?> -->
+                <?php if (get_sub_field('title')) : ?>
+            <h3 class="section__title no-br"><?= get_sub_field('title'); ?></h3>
+        <?php endif; ?>
                 <!-- Title -->
 
                 <!-- Text -->
