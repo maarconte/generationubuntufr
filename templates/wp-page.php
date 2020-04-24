@@ -6,19 +6,19 @@
  */
 ?>
 
-<? get_header(); ?>
+<?php get_header(); ?>
 <main id="page">
-<? if (has_post_thumbnail()) : ?>
+<?php if (has_post_thumbnail()) : ?>
     <section class="page__header">
-    <h1 class="page__header__title text-center"><? the_title(); ?></h1>
-        <? the_post_thumbnail('large'); ?>
+    <h1 class="page__header__title text-center"><?php the_title(); ?></h1>
+        <?php the_post_thumbnail('large'); ?>
     </section>
-  <? endif?>
+  <?php endif?>
 
       <section class="container">
-    <? while (have_posts()) : the_post(); ?>
-        <? the_content(); ?>
-    <? endwhile; ?>
+    <?php while (have_posts()) : the_post(); ?>
+        <?php the_content(); ?>
+    <?php endwhile; ?>
       </section>
 
 
@@ -26,4 +26,4 @@
 
 
 
-<? get_footer(); ?>
+<?php get_footer(); ?>

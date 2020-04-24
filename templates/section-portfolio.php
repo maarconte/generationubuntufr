@@ -15,7 +15,7 @@
       <div class="container">
           <!-- Title -->
           <?php if(get_sub_field('title') ) : ?>
-              <h2 class="section__title"><?= get_sub_field('title'); ?></h2>
+              <h2 class="section__title"><?php echo  get_sub_field('title'); ?></h2>
           <?php endif; ?>
           <!-- Title -->
           <!-- Portfolio -->
@@ -39,7 +39,7 @@
                   </div>
               <?php $i++; endwhile;?>
             </div>
-            <? endif; wp_reset_query();?>
+            <?php endif; wp_reset_query();?>
           <!-- Portfolio -->
       </div>
  </section>

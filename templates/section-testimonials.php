@@ -11,14 +11,14 @@
  */
  ?>
 <?php $fond = get_sub_field('fond'); ?>
-  <section class="section section-testimonials <? echo $fond == "Couleur" ? "bg-primary": $fond == "Gris" ? "bg-light" : "" ?>">
+  <section class="section section-testimonials <?php echo $fond == "Couleur" ? "bg-primary": $fond == "Gris" ? "bg-light" : "" ?>">
     <!-- Section background: image -->
-      <? if(get_sub_field('fond') == "Image"):?>
+      <?php if(get_sub_field('fond') == "Image"):?>
       <div class="section__background-image"  style="
-            <? if(get_sub_field('image')):?>
-            background-image:url(<? echo the_sub_field('image') ?>);
-            <? endif;?>"></div>
-      <? endif;?>
+            <?php if(get_sub_field('image')):?>
+            background-image:url(<?php echo the_sub_field('image') ?>);
+            <?php endif;?>"></div>
+      <?php endif;?>
     <!-- Section background: image -->
         <div class="container">
               <?php
@@ -30,7 +30,7 @@
                     <div id="carouselTestimonials" class="section-testimonials__carousel carousel slide" data-ride="carousel">
                         <!-- Title -->
                         <?php if(get_sub_field('title') ) : ?>
-                              <h2 class="section__title text-center"><?= get_sub_field('title'); ?></h2>
+                              <h2 class="section__title text-center"><?php echo  get_sub_field('title'); ?></h2>
                         <?php endif; ?>
                         <!-- Title -->
                           <div class="carousel-inner">
@@ -39,24 +39,24 @@
                                     <!-- Image -->
                                     <?php if (get_the_post_thumbnail()) : ?>
                                           <img src="<?php the_post_thumbnail_url('thumbnail')?>" alt="" class="section-testimonials__carousel_item-image">
-                                    <? else : ?>
+                                    <?php else : ?>
                                           <div class="section-testimonials__carousel_item-image"></div>
-                                    <? endif;?>
+                                    <?php endif;?>
                                     <!-- Image -->
                                       <!-- Job -->
                                       <?php if (get_field('quote') ) : ?>
-                                            <p> <?= get_field('quote'); ?></p>
+                                            <p> <?php echo  get_field('quote'); ?></p>
                                       <?php endif; ?>
                                       <!-- Job -->
                                       <!-- Auteur -->
                                             <h5><?php the_title()?></h5>
                                       <!-- Auteur -->
                                 </div>
-                                <? $y++ ; endwhile;?>
+                                <?php $y++ ; endwhile;?>
                               </div>
                                       <ol class="carousel-indicators">
                                 <?php while ( $the_query->have_posts() ): $the_query->the_post(); ?>
-                                      <li data-target="#carouselTestimonials" data-slide-to="<?= $i?>" class="<?php if($i == 0) {echo 'active';
+                                      <li data-target="#carouselTestimonials" data-slide-to="<?php echo  $i?>" class="<?php if($i == 0) {echo 'active';
                                       } ?>"></li>
                                 <?php $i++; endwhile;?>
                                 </ol>
@@ -67,6 +67,6 @@
                                 <i class="fas fa-chevron-right fa-2x" aria-hidden="true"></i>
                           </a>
                     </div>
-                <? endif; wp_reset_query(); ?>
+                <?php endif; wp_reset_query(); ?>
         </div>
  </section>

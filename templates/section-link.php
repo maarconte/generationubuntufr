@@ -13,35 +13,35 @@
 ?>
 
 <?php $fond = get_sub_field('fond'); ?>
-<section class="section section-link text-center <? echo $fond == "Couleur" ? "bg-primary" : "" ?>">
+<section class="section section-link text-center <?php echo $fond == "Couleur" ? "bg-primary" : "" ?>">
     <!-- Section background: image -->
-    <? if (get_sub_field('fond') == "Image") : ?>
+    <?php if (get_sub_field('fond') == "Image") : ?>
         <div class="section__background-image" style="
-        <? if (get_sub_field('image')) : ?>
-        background-image:url(<? echo the_sub_field('image') ?>);
-        <? endif; ?>"></div>
-    <? endif; ?>
+        <?php if (get_sub_field('image')) : ?>
+        background-image:url(<?php echo the_sub_field('image') ?>);
+        <?php endif; ?>"></div>
+    <?php endif; ?>
     <!-- Section background: image -->
     <div class="container">
         <div class="row">
             <div class="col-md-10 offset-md-1 col-sm-12 offset-sm-0">
                 <!-- Title -->
                 <?php if (get_sub_field('title')) : ?>
-            <h3 class="section__title no-br"><?= get_sub_field('title'); ?></h3>
+            <h3 class="section__title no-br"><?php echo  get_sub_field('title'); ?></h3>
         <?php endif; ?>
                 <!-- Title -->
 
                 <!-- Text -->
                 <?php if (get_sub_field('text')) : ?>
-                    <p class="mb-4"> <?= get_sub_field('text'); ?></p>
+                    <p class="mb-4"> <?php echo  get_sub_field('text'); ?></p>
                 <?php endif; ?>
                 <!-- Text -->
                 <div class="d-flex justify-content-center">
   <!-- Button -->
   <?php if ( get_sub_field('button') ) : $link = get_sub_field('button'); ?>
                 <div class="section-text-image__btn">
-                    <a class="btn <?= $fond == "Couleur" ? "btn-dark" : "btn-primary" ?>" href="<?= $link['url']; ?>">
-                        <?= $link['title']; ?>
+                    <a class="btn <?php echo  $fond == "Couleur" ? "btn-dark" : "btn-primary" ?>" href="<?php echo  $link['url']; ?>">
+                        <?php echo  $link['title']; ?>
                     </a>
                 </div>
                 <?php endif; ?>
@@ -49,8 +49,8 @@
   <!-- Button -->
   <?php if ( get_sub_field('button_secondary') ) : $link = get_sub_field('button_secondary'); ?>
                 <div class="section-text-image__btn">
-                    <a class="btn btn-dark" href="<?= $link['url']; ?>">
-                        <?= $link['title']; ?>
+                    <a class="btn btn-dark" href="<?php echo  $link['url']; ?>">
+                        <?php echo  $link['title']; ?>
                     </a>
                 </div>
                 <?php endif; ?>
