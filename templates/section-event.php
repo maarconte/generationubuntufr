@@ -25,7 +25,7 @@
  	try {
 		// Returns a `FacebookFacebookResponse` object
 		$response = $fb->get(
-		"/" . $appId . "/events?fields=start_time,name,description,cover",
+		"/" . $appId . "/events?fields=start_time,name,description,cover&limit=6",
 		$accessToken
 		);
 	} catch(FacebookExceptionsFacebookResponseException $e) {
