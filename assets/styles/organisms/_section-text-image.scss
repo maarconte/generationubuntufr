@@ -1,4 +1,9 @@
 .section-text-image {
+    .row {
+        min-height: inherit !important;
+        align-items: center;
+    }
+
     &:nth-of-type(even) {
         .row {
             @include breakpoint(tablet) {

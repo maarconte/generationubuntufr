@@ -15,7 +15,7 @@
     </section>
   <?php endif?>
 
-      <section class="container">
+      <section class="container pt-5 pb-5">
     <?php while (have_posts()) : the_post(); ?>
         <?php the_content(); ?>
     <?php endwhile; ?>
