@@ -55,7 +55,6 @@ $amplifier-heading: 1.5;
 }
 
 @mixin ellipsis($width: 100%) {
-    display: inline-block;
     max-width: $width;
     overflow: hidden;
     text-overflow: ellipsis;

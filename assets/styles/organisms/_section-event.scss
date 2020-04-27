@@ -20,6 +20,7 @@
     &_item {
         border: none !important;
         box-shadow: $shadow__soft;
+        margin-bottom: 2rem;
 
         &:hover {
             text-decoration: none !important;
@@ -27,6 +28,8 @@
 
         &_title {
             font-size: 1rem;
+
+            @include ellipsis;
         }
 
         &_img {
@@ -68,8 +71,19 @@
 
         &_content {
             display: grid;
-            grid-template-columns: 50px 1fr;
+            grid-template-columns: 50px minmax(50px, 1fr);
             gap: 20px;
+
+            div {
+                position: relative;
+            }
+
+            /*    display: flex; */
+
+            /*   div:last-child {
+                  // grid-column: -1;
+                  flex-grow: 1;
+              } */
         }
 
         &:hover {

@@ -69,7 +69,7 @@
 								<p class="section-event_item_date_day"><?php echo  $dateEvent-> format('d') ?></p>
 							</div>
 							<div>
-							<h5 class="card-title section-event_item_title"><?php echo shorten($events[$i]['name'], 20) ?> </h5>
+							<h5 class="card-title section-event_item_title"><?php echo $events[$i]['name'] ?> </h5>
 							<p class="card-text section-event_item_text"><?php echo shorten($events[$i]['description'], 60) ?></p>
 							</div>
 						</div>
