@@ -49,36 +49,27 @@
 
         .section {
             &__text {
-                font-family: "Arial Narrow", "sans-serif";
-                font-size: 16px;
-                color: $black;
                 margin-left: 22px;
-                margin-bottom: 25px!important;
+                margin-bottom: 25px !important;
             }
         }
 
         .wpcf7-form {
-            p {
-                &:nth-of-type(1), &:nth-of-type(3) {
-                    display: inline-block;
-                    width: 120px;
-                }
-        
-                &:nth-of-type(2), &:nth-of-type(4) {
-                    display: inline-block;
-                    width: calc(100% - 136px);
-                    margin-left: 1rem;
-                }
+            .col-sm-3 {
+                padding-right: 0 !important;
             }
-        
-            span.wpcf7-form-control-wrap {
+
+            textarea {
+                min-height: 355px;
+            }
+
+            .select-span {
                 display: block;
-        
-                textarea {
-                    height: 338px;
+
+                &:after {
+                    top: 15%;
                 }
             }
-        
         }
     }
 }

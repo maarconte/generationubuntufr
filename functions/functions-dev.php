@@ -125,10 +125,10 @@ function gur_gtm($type) {
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','<?= $GTM_id ?>');</script>
+    })(window,document,'script','dataLayer','<?php echo  $GTM_id ?>');</script>
        <?php elseif ($type == 'body') : ?>
       <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?= $GTM_id ?>"
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo  $GTM_id ?>"
       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <?php
     endif;
@@ -216,9 +216,16 @@ if (false && !is_user_logged_in() && is_main_query() && !is_admin() && !is_login
   wp_redirect('/admin'); die();
 }
 
+function clean($string) {
+  $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
+
+  return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
+}
+
 function sectionID($text){
     $a = remove_accents($text);
-    $result = strtolower(str_replace(" ", "-", $a));
+    $a = clean($a);
+    $result = strtolower($a);
     return $result;
 }
 ?>

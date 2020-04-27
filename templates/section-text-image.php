@@ -12,7 +12,7 @@
  */
 ?>
 
-<section id="section-<?= sectionID(get_sub_field('title'));?>" class="section section-text-image">
+<section id="section-<?php echo  sectionID(get_sub_field('title'));?>" class="section section-text-image">
     <div class="container">
         <div class="section-text-image__title">
             <?php if (get_sub_field('title')) : ?>
@@ -24,16 +24,16 @@
                 <div class="block__image--bordered">
                     <div class="img-box">
                     <?php if (get_sub_field('image')) : $img = get_sub_field('image'); ?>
-                        <img src="<?= $img['url']?>" class="img-fluid" />
+                        <img src="<?php echo  $img['url']?>" class="img-fluid" />
                     <?php endif; ?>
                     </div>
                     <div class="bordered left-bottom"></div>
                 </div>
                 <!-- Button -->
                 <?php if ( get_sub_field('button') ) : $link = get_sub_field('button'); ?>
-                <div class="section-text-image__btn d-none d-md-block">
-                    <a class="btn btn-primary" href="<?= $link['url']; ?>">
-                        <?= $link['title']; ?>
+                <div class="section-text-image__btn d-none d-md-block" target="<?php echo  $link['target']; ?>">
+                    <a class="btn btn-primary" href="<?php echo  $link['url']; ?>">
+                        <?php echo  $link['title']; ?>
                     </a>
                 </div>
                 <?php endif; ?>
@@ -43,14 +43,14 @@
                 <div class="section-text-image__text__inner">
                     <!-- Text -->
                     <?php if (get_sub_field('text')) : ?>
-                        <?= get_sub_field('text'); ?>
+                        <?php echo  get_sub_field('text'); ?>
                     <?php endif; ?>
                     <!-- Text -->
                    <!-- Button -->
                    <?php if ( get_sub_field('button') ) : $link = get_sub_field('button'); ?>
-                <div class="section-text-image__btn d-md-none d-block">
-                    <a class="btn btn-primary" href="<?= $link['url']; ?>">
-                        <?= $link['title']; ?>
+                <div class="section-text-image__btn d-md-none d-block" target="<?php echo  $link['target']; ?>">
+                    <a class="btn btn-primary" href="<?php echo  $link['url']; ?>">
+                        <?php echo  $link['title']; ?>
                     </a>
                 </div>
                 <?php endif; ?>

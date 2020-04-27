@@ -10,7 +10,7 @@
  *
  */
  ?>
-<? /*  include('../inc/php-graph-sdk-5.x/src/Facebook/autoload.php'); */  // change path as needed	$path = $_SERVER['DOCUMENT_ROOT'];
+<?php /*  include('../inc/php-graph-sdk-5.x/src/Facebook/autoload.php'); */  // change path as needed	$path = $_SERVER['DOCUMENT_ROOT'];
 	$path = get_template_directory()."/inc/php-graph-sdk-5.x/src/Facebook/autoload.php";
 	require_once $path;
 	$appId = get_sub_field('app_id');
@@ -22,11 +22,10 @@
 		'default_graph_version' => 'v2.10',
 		//'default_access_token' => '{access-token}', // optional
 	]);
-
  	try {
 		// Returns a `FacebookFacebookResponse` object
 		$response = $fb->get(
-		"/".$appId.'/events',
+		"/" . $appId . "/events?fields=start_time,name,description,cover&limit=6",
 		$accessToken
 		);
 	} catch(FacebookExceptionsFacebookResponseException $e) {
@@ -46,40 +45,41 @@
 			<!-- Title -->
 			<?php if (get_sub_field('title')) : ?>
 				<h2 class="section__title">
-					<?= get_sub_field('title'); ?>
+					<?php echo  get_sub_field('title'); ?>
 				</h2>
 			<?php endif; ?>
 			<!-- Title -->
 		<?php if ( get_sub_field('button') ) : $link = get_sub_field('button'); ?>
-			<a class="btn btn-outline-dark" href="<?= $link['url']; ?>">
-				<?= $link['title']; ?>
+			<a class="btn btn-outline-dark" href="<?php echo  $link['url']; ?>">
+				<?php echo  $link['title']; ?>
 			</a>
 		<?php endif; ?>
 		</div>
-<? if (count($events) > 0) : ?>
+<?php if (count($events) > 0) : ?>
 		<div class="row">
-		<? for ($i=0; $i < count($events) ; $i++) { ?>
-		<? $dateEvent = $events[$i]['start_time'] ; ?>
+		<?php for ($i=0; $i < count($events) ; $i++) { ?>
+		<?php $dateEvent = $events[$i]['start_time'] ; ?>
 			<div class="col-sm-6 col-md-4">
-				<div class="section-event_item card">
-					<img class="card-img-top section-event_item_img" src="/wp-content/uploads/2020/04/Page.png" alt="Card image cap">
+			<a href="https://facebook.com/events/<?php echo  $events[$i]['id']?>" class="section-event_item card" target="_blank">
+					<img class="card-img-top section-event_item_img" src="<?php echo  $events[$i]['cover']['source'] ?>" alt="Card image cap">
 					<div class="card-body">
 						<div class="section-event_item_content">
 							<div class="section-event_item_date">
-								<p class="section-event_item_date_month"><?= $dateEvent-> format('M') ?></p>
-								<p class="section-event_item_date_day"><?= $dateEvent-> format('d') ?></p>
+								<p class="section-event_item_date_month"><?php echo  $dateEvent-> format('M') ?></p>
+								<p class="section-event_item_date_day"><?php echo  $dateEvent-> format('d') ?></p>
 							</div>
 							<div>
-							<h5 class="card-title section-event_item_title"><a href="https://facebook.com/events/<?= $events[$i]['id']?>"><?= $events[$i]['name'] ?></a> </h5>
-							<p class="card-text section-event_item_text"><?= shorten($events[$i]['description'], 60) ?></p>
+							<h5 class="card-title section-event_item_title"><?php echo $events[$i]['name'] ?> </h5>
+							<p class="card-text section-event_item_text"><?php echo shorten($events[$i]['description'], 60) ?></p>
 							</div>
 						</div>
 					</div>
-				</div>
-		<? } ?>
+
+			</a>
 			</div>
+		<?php } ?>
 		</div>
-		<? else : ?><p>Il n'y a aucun événements à venir.</p>
-		<? endif; ?>
+		<?php else : ?><p>Il n'y a aucun événements à venir.</p>
+		<?php endif; ?>
 	</div>
  </section>

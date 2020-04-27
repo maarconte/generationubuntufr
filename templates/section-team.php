@@ -12,14 +12,14 @@
  */
 ?>
 <?php $fond = get_sub_field('fond'); ?>
-<section class="section section-team <? echo $fond == "Couleur" ? "bg-primary" : $fond == "Gris" ? "bg-light" : "" ?>">
+<section class="section section-team <?php echo $fond == "Couleur" ? "bg-primary" : $fond == "Gris" ? "bg-light" : "" ?>">
     <!-- Section background: image -->
-    <? if (get_sub_field('fond') == "Image") : ?>
+    <?php if (get_sub_field('fond') == "Image") : ?>
         <div class="section__background-image" style="
-            <? if (get_sub_field('image')) : ?>
-            background-image:url(<? echo the_sub_field('image') ?>);
-            <? endif; ?>"></div>
-    <? endif; ?>
+            <?php if (get_sub_field('image')) : ?>
+            background-image:url(<?php echo the_sub_field('image') ?>);
+            <?php endif; ?>"></div>
+    <?php endif; ?>
     <!-- Section background: image -->
     <div class="section__background bg-primary"></div>
     <div class="container">
@@ -27,7 +27,7 @@
             <div class="col-sm-12">
                 <!-- Title -->
                 <?php if (get_sub_field('title')) : ?>
-                    <h2 class="section__title"><?= get_sub_field('title'); ?></h2>
+                    <h2 class="section__title"><?php echo  get_sub_field('title'); ?></h2>
                 <?php endif; ?>
                 <!-- Title -->
             </div>
@@ -39,16 +39,16 @@
         );
         $the_query = new WP_Query($args);
         if ($the_query->have_posts()) : ?>
-            <div class="row justify-content-center">
+            <div class="">
                 <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-                    <div class="col-sm-12 team-column">
+                    <div class="team-column">
                         <div class="section-team__member">
                             <!-- Image -->
                             <?php if (get_the_post_thumbnail()) : ?>
-                                <img class="section-team__member__img" src="<?php the_post_thumbnail_url('medium') ?>" alt="<?php the_title() ?>">
-                            <? else : ?>
-                                <div class="section-team__member__img"></div>
-                            <? endif; ?>
+                                <div class="section-team__member__img">
+                                    <img  src="<?php the_post_thumbnail_url('large') ?>" alt="<?php the_title() ?>">
+                                </div>
+                            <?php endif; ?>
                             <!-- Image -->
                             <div class="section-team__member__content">
                                 <!-- Name -->
@@ -56,12 +56,12 @@
                                 <!-- Name -->
                                 <!-- Job -->
                                 <?php if (get_field('job')) : ?>
-                                    <h5 class="section-team__member__content__job"> <?= get_field('job'); ?></h5>
+                                    <h5 class="section-team__member__content__job"> <?php echo  get_field('job'); ?></h5>
                                 <?php endif; ?>
                                 <!-- Job -->
                                 <!-- Description -->
                                 <?php if (get_field('description')) : ?>
-                                    <p class="section-team__member__content__desc"> <?= get_field('description'); ?></p>
+                                    <p class="section-team__member__content__desc"> <?php echo  get_field('description'); ?></p>
                                 <?php endif; ?>
                                 <!-- Description -->
                             </div>
@@ -120,9 +120,9 @@
                             <!-- Social media -->
                         </div>
                     </div>
-                <? endwhile; ?>
+                <?php endwhile; ?>
             </div>
-        <? endif;
+        <?php endif;
         wp_reset_query(); ?>
     </div>
 </section>

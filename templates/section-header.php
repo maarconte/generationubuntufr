@@ -10,28 +10,28 @@
  *
  */
  ?>
-      <? $custom_logo_id = get_theme_mod( 'custom_logo' );
+      <?php $custom_logo_id = get_theme_mod( 'custom_logo' );
         $image = wp_get_attachment_image_src( $custom_logo_id , 'medium' ); ?>
 <?php $fond = get_sub_field('fond'); ?>
-  <section class="section section-header <? echo $fond == "Couleur" ? "bg-primary": $fond == "Gris" ? "bg-light" : "" ?>">
+  <section class="section section-header <?php echo $fond == "Couleur" ? "bg-primary": $fond == "Gris" ? "bg-light" : "" ?>">
     <!-- Section background: image -->
-    <? if(get_sub_field('fond') == "Image"):?>
+    <?php if(get_sub_field('fond') == "Image"):?>
         <div class="section-background-image"  style="
-        <? if(get_sub_field('image')):?>
-        background-image:url(<? echo the_sub_field('image') ?>);
-        <? endif;?>"></div>
-    <? endif;?>
+        <?php if(get_sub_field('image')):?>
+        background-image:url(<?php echo the_sub_field('image') ?>);
+        <?php endif;?>"></div>
+    <?php endif;?>
     <!-- Section background: image -->
     <div class="container">
            <!-- Title -->
         <?php if(get_sub_field('title') ) : ?>
-            <h1 class="section__title"><?= get_sub_field('title'); ?></h1>
+            <h1 class="section__title"><?php echo  get_sub_field('title'); ?></h1>
         <?php endif; ?>
         <!-- Title -->
 
         <!-- Lead -->
         <?php if(get_sub_field('lead') ) : ?>
-            <p> <?= get_sub_field('lead'); ?></p>
+            <p> <?php echo  get_sub_field('lead'); ?></p>
         <?php endif; ?>
         <!-- Lead -->
         <!-- Button -->

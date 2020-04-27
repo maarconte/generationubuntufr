@@ -13,10 +13,9 @@ header {
 .page__header {
     display: flex;
     align-items: center;
-    height: 300px;
+    height: 400px;
     overflow: hidden;
     position: relative;
-    margin-bottom: 50px;
 
     &:before {
         content: "";

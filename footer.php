@@ -13,7 +13,7 @@
 			<?php if (have_rows('rs', 'options')) : ?>
 				<div class="col-md-3 col-sm-12 text-center">
 					<div class="footer__logo">
-						<img src="<?= get_template_directory_uri() ?>/assets/images/logo-footer.png" alt="logo footer">
+						<img src="<?php echo  get_template_directory_uri() ?>/assets/images/logo-footer.png" alt="logo footer">
 					</div>
 					<p class="footer__follow-us">Suivez nous !</p>
 					<?php while (have_rows('rs', 'options')) : the_row(); ?>
@@ -47,24 +47,24 @@
 								</li>
 							<?php endif; ?>
 						</ul>
-					<? endwhile; ?>
+					<?php endwhile; ?>
 				</div>
-			<? endif; ?>
+			<?php endif; ?>
 
-			<? if (is_active_sidebar('footer-1')) {
+			<?php if (is_active_sidebar('footer-1')) {
 				dynamic_sidebar('footer-1');
 			} ?>
 
 			<div class="col-md-3 col-sm-12 footer__infos">
-						<p><?= get_bloginfo('name'); ?></p>
+						<p><?php echo  get_bloginfo('name'); ?></p>
 					<?php if (get_field('adress', 'option')) : ?>
-							<p><?= get_field('adress', 'option'); ?></p>
+							<p><?php echo  get_field('adress', 'option'); ?></p>
 					<?php endif; ?>
 					<?php if (get_field('contact_mail', 'option')) : ?>
-							<p><?= get_field('contact_mail', 'option'); ?></p>
+							<p><?php echo  get_field('contact_mail', 'option'); ?></p>
 					<?php endif; ?>
 					<?php if (get_field('phone', 'option')) : ?>
-							<p><?= get_field('phone', 'option'); ?></p>
+							<p><?php echo  get_field('phone', 'option'); ?></p>
 					<?php endif; ?>
 				</ul>
 			</div>
@@ -76,12 +76,12 @@
 				© Copyright 2019, Tous droits réservés Génération Ubuntu France
 			</div>
 			<a class="footer__credits__thatmuch" href="https://thatmuch.fr" target="_blank" rel="noopener noreferrer">
-				<img src="<?= get_template_directory_uri() ?>/assets/images/thatmuch-logo.png" alt="logo that much">
+				<img src="<?php echo  get_template_directory_uri() ?>/assets/images/thatmuch-logo.png" alt="logo that much">
 			</a>
 		</div>
 	</div>
 </footer>
-<? wp_footer() ?>
+<?php wp_footer() ?>
 </body>
 
 </html>
