@@ -53,3 +53,11 @@ $amplifier-heading: 1.5;
 @mixin heading-size($size) {
     font-size: $size * $step-size-heading * $amplifier-heading + rem;
 }
+
+@mixin ellipsis($width: 100%) {
+    display: inline-block;
+    max-width: $width;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

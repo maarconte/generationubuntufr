@@ -31,7 +31,7 @@
                 </div>
                 <!-- Button -->
                 <?php if ( get_sub_field('button') ) : $link = get_sub_field('button'); ?>
-                <div class="section-text-image__btn d-none d-md-block">
+                <div class="section-text-image__btn d-none d-md-block" target="<?php echo  $link['target']; ?>">
                     <a class="btn btn-primary" href="<?php echo  $link['url']; ?>">
                         <?php echo  $link['title']; ?>
                     </a>
@@ -48,7 +48,7 @@
                     <!-- Text -->
                    <!-- Button -->
                    <?php if ( get_sub_field('button') ) : $link = get_sub_field('button'); ?>
-                <div class="section-text-image__btn d-md-none d-block">
+                <div class="section-text-image__btn d-md-none d-block" target="<?php echo  $link['target']; ?>">
                     <a class="btn btn-primary" href="<?php echo  $link['url']; ?>">
                         <?php echo  $link['title']; ?>
                     </a>

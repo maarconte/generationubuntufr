@@ -60,7 +60,7 @@
 		<?php for ($i=0; $i < count($events) ; $i++) { ?>
 		<?php $dateEvent = $events[$i]['start_time'] ; ?>
 			<div class="col-sm-6 col-md-4">
-				<div class="section-event_item card">
+			<a href="https://facebook.com/events/<?php echo  $events[$i]['id']?>" class="section-event_item card" target="_blank">
 					<img class="card-img-top section-event_item_img" src="<?php echo  $events[$i]['cover']['source'] ?>" alt="Card image cap">
 					<div class="card-body">
 						<div class="section-event_item_content">
@@ -69,12 +69,13 @@
 								<p class="section-event_item_date_day"><?php echo  $dateEvent-> format('d') ?></p>
 							</div>
 							<div>
-							<h5 class="card-title section-event_item_title"><a href="https://facebook.com/events/<?php echo  $events[$i]['id']?>"><?php echo  $events[$i]['name'] ?></a> </h5>
-							<p class="card-text section-event_item_text"><?php echo  shorten($events[$i]['description'], 60) ?></p>
+							<h5 class="card-title section-event_item_title"><?php echo shorten($events[$i]['name'], 20) ?> </h5>
+							<p class="card-text section-event_item_text"><?php echo shorten($events[$i]['description'], 60) ?></p>
 							</div>
 						</div>
 					</div>
-				</div>
+
+			</a>
 			</div>
 		<?php } ?>
 		</div>

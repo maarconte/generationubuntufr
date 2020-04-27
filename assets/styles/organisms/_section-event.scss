@@ -21,6 +21,10 @@
         border: none !important;
         box-shadow: $shadow__soft;
 
+        &:hover {
+            text-decoration: none !important;
+        }
+
         &_title {
             font-size: 1rem;
         }

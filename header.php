@@ -59,28 +59,28 @@
 					<ul class="navbar-nav ml-auto header__rs">
 						<?php if (get_sub_field('facebook')) : ?>
 							<li class="footer__rs__item">
-								<a href="<?php the_sub_field('facebook'); ?>">
+								<a href="<?php the_sub_field('facebook'); ?>" target="_blank">
 									<i class="fab fa-facebook" aria-hidden="true"></i>
 								</a>
 							</li>
 						<?php endif; ?>
 						<?php if (get_sub_field('twitter')) : ?>
 							<li class="footer__rs__item">
-								<a href="<?php the_sub_field('twitter'); ?>">
+								<a href="<?php the_sub_field('twitter'); ?>" target="_blank">
 									<i class="fab fa-twitter" aria-hidden="true"></i>
 								</a>
 							</li>
 						<?php endif; ?>
 						<?php if (get_sub_field('linkedin')) : ?>
 							<li class="footer__rs__item">
-								<a href="<?php the_sub_field('linkedin'); ?>">
+								<a href="<?php the_sub_field('linkedin'); ?>" target="_blank">
 									<i class="fab fa-linkedin" aria-hidden="true"></i>
 								</a>
 							</li>
 						<?php endif; ?>
 						<?php if (get_sub_field('instagram')) : ?>
 							<li class="footer__rs__item">
-								<a href="<?php the_sub_field('instagram'); ?>">
+								<a href="<?php the_sub_field('instagram'); ?>" target="_blank">
 									<i class="fab fa-instagram" aria-hidden="true"></i>
 								</a>
 							</li>
