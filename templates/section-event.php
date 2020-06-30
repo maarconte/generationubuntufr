@@ -13,11 +13,12 @@
 <?php /*  include('../inc/php-graph-sdk-5.x/src/Facebook/autoload.php'); */  // change path as needed	$path = $_SERVER['DOCUMENT_ROOT'];
 	$path = get_template_directory()."/inc/php-graph-sdk-5.x/src/Facebook/autoload.php";
 	require_once $path;
-	$appId = get_sub_field('app_id');
+    $appId = get_sub_field('app_id');
+    $pageId = get_sub_field('page_id');
 	$accessToken = get_sub_field('access_token');
 	$appSecret = get_sub_field('app_secret');
 	$fb = new \Facebook\Facebook([
-		'app_id' =>  $appId,
+		'app_id' => "1073475513052736",
 		'app_secret' => $appSecret,
 		'default_graph_version' => 'v2.10',
 		//'default_access_token' => '{access-token}', // optional
@@ -25,7 +26,7 @@
  	try {
 		// Returns a `FacebookFacebookResponse` object
 		$response = $fb->get(
-		"/" . $appId . "/events?fields=start_time,name,description,cover&limit=6",
+		"/" . $pageId . "/events?fields=start_time,name,description,cover&limit=6",
 		$accessToken
 		);
 	} catch(FacebookExceptionsFacebookResponseException $e) {
