@@ -18,7 +18,7 @@
 	$accessToken = get_sub_field('access_token');
 	$appSecret = get_sub_field('app_secret');
 	$fb = new \Facebook\Facebook([
-		'app_id' => "1073475513052736",
+		'app_id' => $appId,
 		'app_secret' => $appSecret,
 		'default_graph_version' => 'v2.10',
 		//'default_access_token' => '{access-token}', // optional
